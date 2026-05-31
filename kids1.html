@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <title>مكتبة القصص | حكايات الأطفال</title>
+  <meta name="description" content="اختر قصتك المفضلة من البوسترات الجميلة. قصص مشوقة وطويلة للأطفال.">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #fcf5e8;
+      font-family: 'Cairo', 'El Messiri', sans-serif;
+      min-height: 100vh;
+      padding: 1rem;
+      background-image: 
+        radial-gradient(ellipse at 20% 10%, #ffe8cf 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 90%, #fde2c4 0%, transparent 50%);
+    }
+
+    /* ========== صفحة البوسترات ========== */
+    .posters-page {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .main-title {
+      font-size: 3.2rem;
+      font-weight: 800;
+      color: #5b3417;
+      margin: 2rem 0 3rem;
+      text-align: center;
+      font-family: 'El Messiri', sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      text-shadow: 2px 2px 0 #ffddb0;
+      letter-spacing: 1px;
+    }
+    .main-title i {
+      color: #d08438;
+      font-size: 3rem;
+    }
+
+    .posters-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+      width: 100%;
+      margin-bottom: 3rem;
+    }
+
+    /* البوستر */
+    .poster-card {
+      background: #fffaf2;
+      border-radius: 4rem 1.5rem 4rem 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 25px 40px rgba(120, 70, 20, 0.25);
+      transition: all 0.4s ease;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      border: 3px solid #e7c9a8;
+      position: relative;
+    }
+
+    .poster-card:hover {
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 35px 55px rgba(160, 100, 30, 0.4);
+      border-color: #ca974b;
+    }
+
+    .poster-img-container {
+      width: 100%;
+      height: 320px;
+      overflow: hidden;
+      position: relative;
+      background: #fdead0;
+    }
+
+    .poster-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s;
+    }
+
+    .poster-card:hover .poster-img {
+      transform: scale(1.08);
+    }
+
+    .poster-badge {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: #f0b86c;
+      color: #482b10;
+      padding: 0.4rem 1.5rem;
+      border-radius: 30px;
+      font-weight: 800;
+      font-size: 1rem;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      letter-spacing: 0.5px;
+    }
+
+    .poster-info {
+      padding: 1.8rem 1.5rem 2rem;
+      text-align: center;
+      background: linear-gradient(180deg, #fffdf7 0%, #fef3e0 100%);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .poster-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #603a1a;
+      margin-bottom: 0.8rem;
+      font-family: 'El Messiri', sans-serif;
+    }
+
+    .poster-desc {
+      font-size: 1.1rem;
+      color: #6b4e35;
+      margin-bottom: 1.8rem;
+      line-height: 1.7;
+    }
+
+    .read-btn {
+      background: #c3823c;
+      color: white;
+      border: none;
+      padding: 0.8rem 2.5rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      box-shadow: 0 8px 0 #7a4e28;
+      transition: 0.2s;
+      background: #b47333;
+      margin-top: auto;
+    }
+
+    .poster-card:hover .read-btn {
+      background: #d99236;
+      box-shadow: 0 10px 0 #6a411f;
+    }
+
+    .back-btn-small {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #5b381c;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-decoration: none;
+      background: #ffedd7;
+      padding: 0.5rem 1.8rem;
+      border-radius: 30px;
+      transition: 0.2s;
+      border: 1px solid #cc9f6b;
+    }
+    .back-btn-small:hover {
+      background: #fdd9a8;
+    }
+
+    /* ========== صفحة القصة الفردية ========== */
+    .story-full-page {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: #fffdf6;
+      border-radius: 5rem 2rem 5rem 2rem;
+      padding: 2.5rem 2.2rem;
+      box-shadow: 0 30px 55px rgba(110, 65, 20, 0.35);
+      border: 2px solid #e2b77c;
+      display: none; /* تظهر فقط عند الحاجة */
+    }
+
+    .story-full-page.active {
+      display: block;
+    }
+
+    .posters-page.hidden {
+      display: none;
+    }
+
+    .story-header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 2.2rem;
+      flex-wrap: wrap;
+    }
+
+    .back-to-posters {
+      background: #f7e5cf;
+      border: 2px solid #aa7b4c;
+      color: #4a3119;
+      padding: 0.8rem 2rem;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .back-to-posters:hover {
+      background: #eaca9a;
+    }
+
+    .story-hero-img {
+      width: 100%;
+      max-height: 380px;
+      object-fit: cover;
+      border-radius: 4rem 1rem 4rem 1rem;
+      margin-bottom: 2rem;
+      border: 4px solid #f2cf9c;
+      box-shadow: 0 15px 30px rgba(130, 70, 10, 0.3);
+    }
+
+    .story-content-title {
+      font-size: 2.8rem;
+      color: #5a3515;
+      font-family: 'El Messiri', sans-serif;
+      text-align: center;
+      margin-bottom: 2rem;
+      font-weight: 700;
+    }
+
+    .story-body {
+      font-size: 1.3rem;
+      line-height: 2.1;
+      color: #3b2b1a;
+      text-align: justify;
+      max-height: 500px;
+      overflow-y: auto;
+      padding-left: 0.8rem;
+      scrollbar-width: thin;
+      scrollbar-color: #dea765 #fdedd3;
+    }
+
+    .section-title {
+      font-weight: 800;
+      color: #b5571a;
+      margin: 2rem 0 1rem;
+      font-size: 1.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      border-right: 6px solid #efb56a;
+      padding-right: 1.2rem;
+    }
+
+    @media (max-width: 700px) {
+      .main-title { font-size: 2.4rem; }
+      .poster-title { font-size: 1.7rem; }
+      .story-content-title { font-size: 2.2rem; }
+      .story-body { font-size: 1.15rem; }
+    }
+  </style>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;600;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Fivicon -->  
+<link rel="icon" type="image/png" href="icon/favicon-96x96.png?v=20260524" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="icon/favicon.svg?v=20260524" />
+<link rel="shortcut icon" href="icon/favicon.ico?v=20260524" />
+<link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png?v=20260524" />
+<link rel="manifest" href="icon/site.webmanifest?v=20260524" />
+
+  
+</head>
+<body>
+
+  <!-- ============= صفحة البوسترات ============= -->
+  <div id="postersPage" class="posters-page">
+    <a href="../kids.html" class="back-btn-small"><i class="fas fa-arrow-right"></i> العودة إلى الأساسيات</a>
+    
+    <h1 class="main-title">
+      <i class="fas fa-book-open"></i> رف القصص الساحر <i class="fas fa-magic"></i>
+    </h1>
+
+    <div class="posters-grid">
+      <!-- بوستر 1 -->
+      <div class="poster-card" data-story="story1">
+        <div class="poster-img-container">
+          <img src="../img-story-kids/story1-ali.jpg" alt="علي والقرية" class="poster-img" onerror="this.onerror=null; this.src='img-story-kids/default-story.jpg';">
+          <span class="poster-badge"><i class="fas fa-star"></i> المغامرة</span>
+        </div>
+        <div class="poster-info">
+          <h2 class="poster-title">🌾 علي والقرية العجيبة</h2>
+          <p class="poster-desc">قصة الغريب الذي حوّل الفقر إلى ثراء بالعلم والعمل.</p>
+          <span class="read-btn"><i class="fas fa-feather-alt"></i> اقرأ القصة</span>
+        </div>
+      </div>
+
+      <!-- بوستر 2 -->
+      <div class="poster-card" data-story="story2">
+        <div class="poster-img-container">
+          <img src="../img-story-kids/story2-yousef.jpg" alt="يوسف البطل" class="poster-img" onerror="this.onerror=null; this.src='img-story-kids/default-story.jpg';">
+          <span class="poster-badge"><i class="fas fa-heart"></i> الأمل</span>
+        </div>
+        <div class="poster-info">
+          <h2 class="poster-title">🦸 بطل مثل أبي</h2>
+          <p class="poster-desc">يوسف يتغلب على الحزن ويصبح طبيباً ينقذ الأرواح.</p>
+          <span class="read-btn"><i class="fas fa-feather-alt"></i> اقرأ القصة</span>
+        </div>
+      </div>
+
+      <!-- بوستر 3 -->
+      <div class="poster-card" data-story="story3">
+        <div class="poster-img-container">
+          <img src="../img-story-kids/story3-kadhab.jpg" alt="سامر والصدق" class="poster-img" onerror="this.onerror=null; this.src='img-story-kids/default-story.jpg';">
+          <span class="poster-badge"><i class="fas fa-exclamation-triangle"></i> الحكمة</span>
+        </div>
+        <div class="poster-info">
+          <h2 class="poster-title">🤥 قرية الصدق</h2>
+          <p class="poster-desc">كيف تعلم سامر درساً لن ينساه عن الكذب وعواقبه.</p>
+          <span class="read-btn"><i class="fas fa-feather-alt"></i> اقرأ القصة</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============= صفحة القصة المفردة ============= -->
+  <div id="storyFullPage" class="story-full-page">
+    <div class="story-header">
+      <button class="back-to-posters" id="backToPostersBtn">
+        <i class="fas fa-arrow-right"></i> العودة للقصص
+      </button>
+    </div>
+    <img id="storyImage" class="story-hero-img" src="" alt="صورة القصة">
+    <h2 id="storyTitle" class="story-content-title"></h2>
+    <div id="storyContent" class="story-body"></div>
+  </div>
+
+  <script>
+    (function() {
+      // بيانات القصص
+      const stories = {
+        story1: {
+          title: "🌾 علي الحداد .. الغريب الذي أضاء القرية",
+          image: "../img-story-kids/story1-ali.jpg",
+          html: `
+            <div class="section-title"><i class="fas fa-sun"></i> الفصل الأول: وصول الغريب</div>
+            <p>في قديم الزمان، وسط وادٍ بعيد تحيط به الجبال القاحلة، كانت هناك قرية صغيرة تدعى <span style="background:#feeac1; padding:0 8px; border-radius:12px; font-weight:700;">"وادي الظلال"</span>. أهلها طيبون لكن الفقر أنهكهم، واليأس خيّم على قلوبهم. في يوم حار، دخل رجل غريب يقود حمارًا محمّلاً بالكتب والأدوات. كان اسمه <span style="background:#feeac1; padding:0 8px; border-radius:12px; font-weight:700;">علي</span>، وجهه يشع ذكاءً رغم الغبار. توقف تحت شجرة توت عجوز وسأل رجلاً مسنًا: "أيها الشيخ، لماذا الوجوه حزينة؟".</p>
+            <p>أجابه الشيخ إبراهيم، حكيم القرية: "يا بني، الأرض بور، لا مال ولا معرفة. الشباب يهاجرون، والمصالح معطلة". نظر علي حوله وقال: "لكن الأرض خصبة وفيها معادن، وأنا حداد ونجار، وسأريك كيف ننهض".</p>
+
+            <div class="section-title"><i class="fas fa-handshake"></i> الفصل الثاني: الاتفاق العجيب</div>
+            <p>جمع علي أهل القرية عند المسجد القديم. قال بصوت واثق: "اتفقت مع الشيخ إبراهيم على تنظيم القرية. من يريد الزراعة؟ ومن يريد الصناعة؟". سادت همهمات، ثم تقدم شاب اسمه سالم: "أنا أحب الزراعة". وتقدمت امرأة قوية تدعى أم ياسر: "أنا أجيد النسيج". اختار علي من كل أسرة شخصًا، وعيّن نفسه قائدًا بإجماع الناس.</p>
+            <p>قال: "هيا أعينوني لاستخراج المعادن من الجبل القريب". في البداية شكّك البعض، لكن علي أخرج أدواته وصنع معاول وفؤوسًا. خلال أسبوعين، استخرجوا الحديد والنحاس. وفي الليل كان علي يعلّمهم من كتبه القديمة عن الدورة الزراعية والري.</p>
+
+            <div class="section-title"><i class="fas fa-seedling"></i> الفصل الثالث: الزراعة والصناعة تزدهران</div>
+            <p>صنع علي محاريث حديدية ومضخات مياه بسيطة. علّم المزارعين كيف يزرعون القمح والشعير على مصاطب. وبنى مع النجارين ورشة كبيرة. كانت أم ياسر تنسج الأقمشة من الصوف، وتبيعها القوافل المارة. تحولت القرية إلى خلية نحل. لكن الخطر كان يتربص...</p>
+
+            <div class="section-title"><i class="fas fa-paw"></i> الفصل الرابع: هجوم الذئاب واللصوص</div>
+            <p>في ليلة مقمرة، هاجمت مجموعة من الذئاب الجائعة حظائر الأغنام. استيقظت القرية على صراخ الرعاة. خرج علي حاملاً شعلة، وصاح: "لا تخافوا! اصنعوا دائرة نار". أشعلوا النيران حول الحظائر، واختبأ الرجال خلف الصخور. قاد علي المجموعة وصنعوا أفخاخًا من الحبال. عندما اندفعت الذئاب، وقعت في الحفر المغطاة. وتم إنقاذ القطيع.</p>
+            <p>بعدها بأشهر، وصل قطاع طرق شرسون. جمع علي أهل القرية وقال: "سنستخدم الذكاء لا القوة". نصبوا فخاخًا خشبية متقنة على مداخل القرية، وأخفوا المتاريس. حين دخل اللصوص ليلاً، علقت أقدامهم في الحبال، وسقطت عليهم شباك ثقيلة. فرّوا مذعورين، وعادوا أدراجهم.</p>
+
+            <div class="section-title"><i class="fas fa-shield-haltered"></i> الفصل الخامس: المرتزقة وخطة النفق</div>
+            <p>جاء مرتزقة مدججون بالسيوف يطلبون الإتاوة. رفضت القرية، فحاصروها. تظاهر علي بالاستسلام، وطلب مهلة ثلاثة أيام. خلالها حفر نفقًا سريًا يمتد خلف التلة، ووضع داخله جرارًا مليئة بالأفاعي غير السامة والأصوات المزعجة. في الليل، تسلل المرتزقة ظناً منهم أن القرية نائمة، فدخلوا النفق المظلم. انطلقت أصوات مخيفة وهربوا مذعورين تاركين أسلحتهم. ضحك الأطفال وهم يجمعون السيوف لتحويلها إلى محاريث.</p>
+
+            <div class="section-title"><i class="fas fa-dove"></i> الفصل السادس: وداع البطل</div>
+            <p>بعد ثلاث سنوات، أصبحت القرية جنة خضراء. الأسواق تعج بالخيرات، والأطفال يتعلمون. وقف علي عند الشجرة نفسها وقال: "لقد تعلمتم كل شيء، وحان وقت رحيلي لأكمل المسيرة". بكى الناس، لكن الشيخ إبراهيم قال: "علمتنا أن الإرادة تصنع المعجزات". غادر علي مع حماره، تاركًا خلفه قرية غنية بالعلم والمال، وظل اسمه يُروى كل ليلة.</p>
+          `
+        },
+        story2: {
+          title: "🦸 بطل مثل أبي .. قصة يوسف ونور",
+          image: "../img-story-kids/story2-yousef.jpg",
+          html: `
+            <div class="section-title"><i class="fas fa-school"></i> الفصل الأول: الولد الصامت</div>
+            <p>في مدرسة النور، كان يجلس يوسف في المقعد الأخير. لا يرفع يده، وعيناه شاردتان. استشهد والده في عملية ضد الإرهاب في سيناء، وأصبح يعيش مع أمه المريضة. دخلت المعلمة فاطمة، امرأة ذكية ذات قلب كبير، وأجرت اختبارًا يدعى <span style="background:#feeac1; padding:0 8px; border-radius:12px; font-weight:700;">"مربعات المهارات"</span>: ألغاز وأسئلة عن الشجاعة والرسم. النتائج: 60% متفوقون، و39% جيدون، أما يوسف فرسم علمًا ودمعة.</p>
+
+            <div class="section-title"><i class="fas fa-heart"></i> الفصل الثاني: خطة المعلمة فاطمة</div>
+            <p>أدركت فاطمة أن يوسف يعاني نفسيًا. فكرت ثم دعت ابنتها نور (في الصف نفسه) وقالت: "صادقي يوسف، واعتبريه أخاكِ". وافقت الأم بعد حديث مؤثر مع المعلمة. قالت نور ليوسف: "هل تحب الأبطال الخارقين؟ تعالَ نشاهد فيلمًا". جلسا معًا، وأثناء الفيلم قالت نور: "أي شخص يدافع عن الناس فهو بطل". اتسعت عينا يوسف وقال بصوت مرتجف: <span style="background:#feeac1; padding:0 8px; border-radius:12px; font-weight:700;">"بابا كان بطلًا خارقًا.. ضحى بنفسه عشان الناس"</span>.</p>
+
+            <div class="section-title"><i class="fas fa-star"></i> الفصل الثالث: كلمة السر "بطل"</div>
+            <p>سمعت فاطمة الحديث، ووضعت يدها على كتفه: "يوسف، أبوك بطل عظيم. لكن اعلم أن الشرطي، والطبيب، والعسكري على الحدود، وحتى الشخص الشجاع الذي ينقذ غيره، كلهم أبطال. والله يكافئ الأبطال". سألته: "هل تريد أن تكون بطلاً مثل أبيك؟". أومأ برأسه والدموع في عينيه. قالت: "إذن طريق البطولة يبدأ بالعلم والاجتهاد".</p>
+
+            <div class="section-title"><i class="fas fa-book-reader"></i> الفصل الرابع: رحلة التفوق</div>
+            <p>منذ ذلك اليوم، صار يوسف يذاكر مع نور يوميًا. كانا يحلان المسائل معًا، ويقرآن قصص الأبطال. تحول يوسف من طالب خجول إلى شعلة نشاط. في الامتحان التالي، حصل على المركز الأول على المدرسة كلها. وقف على المسرح، ووالدته تبكي فرحًا، وصرخ: "هذا لبابا البطل!".</p>
+
+            <div class="section-title"><i class="fas fa-stethoscope"></i> الفصل الخامس: بعد عشرين عامًا</div>
+            <p>كبر يوسف وأصبح طبيبًا ماهرًا. وفي إحدى العمليات الخطيرة، كان المريض على وشك الموت. تذكر كلمات معلمته، وأجرى العملية ببراعة. حين فتح المريض عينيه، همس يوسف: <span style="background:#feeac1; padding:0 8px; border-radius:12px; font-weight:700;">"الحمد لله.. أنا دلوقتي بقيت بطل وأنقذت الناس زيّ بابا"</span>. وأكمل طريقه يزرع الأمل في القلوب.</p>
+          `
+        },
+        story3: {
+          title: "🤥 قرية الصدق .. قصة سامر الكذاب",
+          image: "../img-story-kids/story3-kadhab.jpg",
+          html: `
+            <div class="section-title"><i class="fas fa-exclamation-triangle"></i> الفصل الأول: كذبة صغيرة وكارثة كبيرة</div>
+            <p>كان سامر فتى ذكيًا لكنه اعتاد الكذب للمزاح. يقول لأمه: "البيت يحترق!" فتصرخ ثم تضحك. كررها مرارًا. ذات يوم، رأى دخانًا حقيقيًا من المخبز، فصرخ: "حريق! حريق!". لم يصدقه أحد. احترق المخبز بالكامل، وكاد الناس يموتون. غضب الجميع وقالوا: <span style="background:#feeac1; padding:0 8px; border-radius:12px; font-weight:700;">"الكذاب لا يُصدَق ولو صدق"</span>.</p>
+
+            <div class="section-title"><i class="fas fa-user-friends"></i> الفصل الثاني: الرجل الحكيم</div>
+            <p>جاء الشيخ رشيد، رجل وقور من القرية المجاورة، وجلس مع سامر تحت شجرة الزيتون. قال له: "يا بني، الكذب حرام، وهو باب لكل شر. أتعلم أن الكذاب يفقد ثقة الناس، ويغضب الله؟". قص عليه قصة الراعي الذي كذب حتى أكل الذئب غنمه. بكى سامر وقال: "كيف أتوب؟".</p>
+
+            <div class="section-title"><i class="fas fa-seedling"></i> الفصل الثالث: امتحان الصدق</div>
+            <p>قال الشيخ: "اذهب وازرع عشر بذور زيتون، وقل الحقيقة كل يوم مهما كلفك الأمر". بدأ سامر رحلة شاقة. في المدرسة، اعترف أنه لم يحل الواجب بدل أن يكذب. ضحك البعض، لكن المعلم كافأه. حين كسر زجاج النافذة بالخطأ، ذهب إلى صاحب البيت واعترف. تفاجأ الرجل وسامحه. شيئًا فشيئًا، بدأ الناس يلاحظون تغيره.</p>
+
+            <div class="section-title"><i class="fas fa-hand-holding-heart"></i> الفصل الرابع: الفرج بعد الشدة</div>
+            <p>بعد أشهر، ضاع خاتم ثمين للعمدة. اتهموا شخصًا بريئًا. تقدم سامر وقال بصوت واضح: "أنا رأيت الخاتم سقط في البئر القديمة". بحثوا فوجدوه. أنقذ سامر الرجل البريء بصدقه. قال العمدة: "اليوم ولد من جديد". ومنذ ذلك الحين، أصبح سامر يُدعى <span style="background:#feeac1; padding:0 8px; border-radius:12px; font-weight:700;">"سامر الصادق"</span>، وأصبحت قصته تروى للأطفال: لا تكذب، فالصدق منجاة.</p>
+
+            <div class="section-title"><i class="fas fa-mosque"></i> الفصل الخامس: درس العمر</div>
+            <p>كبر سامر وأصبح تاجرًا أمينًا. يعلّم أولاده: "الكذبة تحرق الثقة كما أحرقت المخبز، والصدق يعيد بناء كل شيء. تذكروا دائماً أن الله مع الصادقين". وازدهرت تجارته لأن الجميع وثقوا به، وعاشت القرية في أمان بفضل درس الصدق.</p>
+          `
+        }
+      };
+
+      const postersPage = document.getElementById('postersPage');
+      const storyFullPage = document.getElementById('storyFullPage');
+      const storyImage = document.getElementById('storyImage');
+      const storyTitle = document.getElementById('storyTitle');
+      const storyContent = document.getElementById('storyContent');
+      const backToPostersBtn = document.getElementById('backToPostersBtn');
+      const posterCards = document.querySelectorAll('.poster-card');
+
+      // فتح قصة معينة
+      function openStory(storyKey) {
+        const story = stories[storyKey];
+        if (!story) return;
+        
+        storyImage.src = story.image;
+        storyImage.onerror = function() {
+          this.src = 'img-story-kids/default-story.jpg';
+        };
+        storyTitle.textContent = story.title;
+        storyContent.innerHTML = story.html;
+        
+        postersPage.classList.add('hidden');
+        storyFullPage.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      // إغلاق والعودة للبوسترات
+      function closeStory() {
+        storyFullPage.classList.remove('active');
+        postersPage.classList.remove('hidden');
+      }
+
+      // ربط البوسترات
+      posterCards.forEach(card => {
+        card.addEventListener('click', function(e) {
+          const storyId = this.getAttribute('data-story');
+          if (storyId) openStory(storyId);
+        });
+      });
+
+      backToPostersBtn.addEventListener('click', closeStory);
+
+      // معالجة الرجوع من المتصفح (اختياري)
+      window.addEventListener('popstate', function(e) {
+        if (storyFullPage.classList.contains('active')) {
+          closeStory();
+        }
+      });
+
+      // عند فتح قصة نضيف حالة للتاريخ
+      const originalOpen = openStory;
+      window.openStory = function(key) {
+        history.pushState({storyOpen: true}, '', '');
+        originalOpen(key);
+      };
+      
+      // إعادة تعريف الدالة لتشمل pushState
+      posterCards.forEach(card => {
+        card.addEventListener('click', function(e) {
+          const storyId = this.getAttribute('data-story');
+          if (storyId) {
+            history.pushState({storyOpen: true}, '', '');
+            originalOpen(storyId);
+          }
+        });
+      });
+
+    })();
+  </script>
+</body>
+</html>
