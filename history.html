@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تاريخ مصر العسكري والحضاري | الراسخون في العلم</title>
+    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;700&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --gold: #d4af37;
+            --dark-royal: #0a0a0a;
+            --sand: #f4e4bc;
+            --egyptian-red: #c0392b;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--dark-royal);
+            color: var(--sand);
+            margin: 0;
+            line-height: 1.8;
+        }
+
+        /* زر الرجوع العلوي */
+        .top-nav {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 15px 0;
+            border-bottom: 2px solid var(--gold);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .top-nav a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+        }
+
+        .top-nav a:hover { color: #fff; transform: translateX(5px); }
+
+        .hero-history {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
+                        url('https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?q=80&w=2070');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--gold);
+        }
+
+        .hero-history h1 {
+            font-family: 'El Messiri', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: var(--gold);
+            margin: 0;
+            text-shadow: 2px 2px 15px #000;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+
+        .intro-box {
+            background: rgba(255,255,255,0.05);
+            padding: 40px;
+            border-radius: 15px;
+            margin: -60px auto 50px;
+            border-right: 8px solid var(--gold);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .era-section { margin-bottom: 80px; }
+
+        .era-title {
+            font-family: 'El Messiri', sans-serif;
+            font-size: 2.2rem;
+            color: var(--gold);
+            border-bottom: 3px solid var(--egyptian-red);
+            display: inline-block;
+            margin-bottom: 40px;
+            padding-bottom: 5px;
+        }
+
+        .kings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .king-card {
+            background: #151515;
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid #333;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .king-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15);
+        }
+
+        .king-card h3 {
+            color: var(--gold);
+            margin-top: 0;
+            font-size: 1.6rem;
+            border-bottom: 1px dashed #444;
+            padding-bottom: 10px;
+        }
+
+        .king-card .date-tag {
+            background: var(--egyptian-red);
+            color: #fff;
+            padding: 3px 12px;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        /* تنسيق خاص لتحتمس الثالث */
+        .special-focus {
+            background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
+            border: 2px solid var(--gold) !important;
+            grid-column: 1 / -1; /* يأخذ العرض الكامل */
+        }
+
+        .achievement-list {
+            padding-right: 20px;
+            list-style: none;
+        }
+
+        .achievement-list li {
+            position: relative;
+            margin-bottom: 12px;
+        }
+
+        .achievement-list li::before {
+            content: "✦";
+            position: absolute;
+            right: -20px;
+            color: var(--gold);
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px;
+            background: #000;
+            border-top: 2px solid var(--gold);
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-history { padding: 60px 20px; }
+            .intro-box { padding: 25px; margin-top: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="top-nav">
+        <div class="container">
+            <a href="../sociology.html"><i class="fas fa-arrow-right"></i> العودة إلى صفحة علم الاجتماع</a>
+        </div>
+    </nav>
+
+    <header class="hero-history">
+        <h1>سجل الخلود: ملوك مصر العظام</h1>
+        <p>رحلة من فجر الاستيطان حتى بناء الإمبراطورية العالمية</p>
+    </header>
+
+    <main class="container">
+        
+        <!-- المقدمة الحضارية -->
+        <div class="intro-box">
+            <h2 style="color: var(--gold);"><i class="fas fa-water"></i> معجزة الاستقرار</h2>
+            <p>
+                بدأ الإنسان المصري القديم حياته فوق <b>الجبال والهضاب</b> (العصر الحجري القديم)، حيث عاش على صيد الحيوانات وجمع الثمار. ومع جفاف الهضاب، هبط إلى <b>وادي النيل (السهول)</b> لتبدأ أعظم قصة في التاريخ. تعلم <b>الزراعة</b> واستأنس الحيوان وبنى القرى عام <b>6000 ق.م</b>، مما أدى لظهور أول نظام سياسي وإداري مركزي في العالم، ممهداً الطريق لظهور "الدولة المصرية الموحدة".
+            </p>
+        </div>
+
+        <!-- العصر العتيق -->
+        <section class="era-section">
+            <h2 class="era-title">العصر العتيق (الأسرة 1 - 2)</h2>
+            <div class="kings-grid">
+                <div class="king-card">
+                    <span class="date-tag">3200 ق.م</span>
+                    <h3>الملك مينا (نعرمر)</h3>
+                    <p><b>موحد القطرين:</b> نجح في توحيد مملكتي الشمال والجنوب تحت حكم مركزي واحد.</p>
+                    <ul class="achievement-list">
+                        <li>مؤسس أول أسرة حاكمة في تاريخ البشرية.</li>
+                        <li>بنى مدينة "منف" (قلعة الجدار الأبيض) لتكون عاصمة سياسية.</li>
+                        <li>سجل انتصاراته على لوحة "نعرمر" الشهيرة.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- الدولة القديمة -->
+        <section class="era-section">
+            <h2 class="era-title">عصر بناة الأهرام (الدولة القديمة)</h2>
+            <div class="kings-grid">
+                <div class="king-card">
+                    <span class="date-tag">الأسرة 3</span>
+                    <h3>الملك زوسر</h3>
+                    <p>صاحب <b>الهرم المدرج</b> بسقارة، وهو أول بناء حجري ضخم في التاريخ، أشرف عليه المهندس العبقري <b>إيمحتب</b>.</p>
+                </div>
+                <div class="king-card">
+                    <span class="date-tag">الأسرة 4</span>
+                    <h3>الملك خوفو</h3>
+                    <p>صاحب <b>الهرم الأكبر</b> بالجيزة، معجزة الهندسة العالمية التي تضم 2.3 مليون حجر بارتفاع 146 متراً.</p>
+                </div>
+                <div class="king-card">
+                    <span class="date-tag">الأسرة 4</span>
+                    <h3>الملك خفرع</h3>
+                    <p>باني الهرم الثاني وصاحب تمثال <b>أبو الهول</b>، رمز القوة والعقل (جسم أسد ورأس إنسان).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- الدولة الحديثة وتركيز على تحتمس -->
+        <section class="era-section">
+            <h2 class="era-title">عصر الإمبراطورية (الدولة الحديثة)</h2>
+            <div class="kings-grid">
+                
+                <!-- الملك أحمس -->
+                <div class="king-card">
+                    <span class="date-tag">الأسرة 18</span>
+                    <h3>الملك أحمس الأول</h3>
+                    <p>قاهر الهكسوس ومحرر البلاد، مؤسس الدولة الحديثة والجيش المصري النظامي المعتمد على العجلات الحربية.</p>
+                </div>
+
+                <!-- تحتمس الثالث بالتفصيل -->
+                <div class="king-card special-focus">
+                    <span class="date-tag">الأسرة 18 (1479 - 1425 ق.م)</span>
+                    <h3 style="font-size: 2.2rem;"><i class="fas fa-shield-halved"></i> الإمبراطور تحتمس الثالث</h3>
+                    <p>يُعد أعظم قائد عسكري في العالم القديم، ويُلقب بـ <b>"نابيليون الشرق"</b> لذكائه الاستراتيجي الفذ.</p>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+                        <div>
+                            <h4 style="color: var(--gold);">الملحمة العسكرية (معركة مجدو):</h4>
+                            <ul class="achievement-list">
+                                <li>واجه تحالفاً من 330 أميراً آسيوياً بقيادة أمير قادش.</li>
+                                <li>اختار المرور من ممر "عرونا" الضيق، مباغتاً العدو بذكاء لم يُسبق له مثيل.</li>
+                                <li>حاصر مدينة مجدو 7 أشهر حتى استسلمت تماماً.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--gold);">أرقام تاريخية:</h4>
+                            <ul class="achievement-list">
+                                <li>خاض <b>16 حملة عسكرية</b> ناجحة ولم يهزم قط.</li>
+                                <li>أنشأ أول <b>أسطول بحري</b> حربي سيطر به على جزر البحر المتوسط.</li>
+                                <li>وسع حدود مصر من بلاد الرافدين شمالاً حتى الشلال الرابع جنوباً.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- رمسيس الثاني -->
+                <div class="king-card">
+                    <span class="date-tag">الأسرة 19 (1279 - 1213 ق.م)</span>
+                    <h3>الملك رمسيس الثاني</h3>
+                    <p>بطل الحرب والسلام، خاض <b>معركة قادش</b> ضد الحيثيين ووقع <b>أول معاهدة سلام</b> مكتوبة في التاريخ.</p>
+                    <ul class="achievement-list">
+                        <li>باني معبدي أبو سمبل ومعبد الرامسيوم.</li>
+                        <li>استمر حكمه 67 عاماً من الرخاء والبناء.</li>
+                    </ul>
+                </div>
+
+                <!-- رمسيس الثالث -->
+                <div class="king-card">
+                    <span class="date-tag">الأسرة 20</span>
+                    <h3>الملك رمسيس الثالث</h3>
+                    <p>آخر الملوك العظام، صد هجمات "شعوب البحر" التي كانت تهدد كيان الدولة المصرية وحقق انتصارات بحرية ساحقة.</p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>سوف نستمر إن شاء الله في زيادة التاريخ المصري</p>
+        <p style="color: #666; font-size: 0.9rem;">نحتاج إلى متطوعين ومثقفين للمزيد من التطوير </p>
+    </footer>
+
+</body>
+</html>
