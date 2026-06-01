@@ -1,60 +1,60 @@
 {
-  "name": "منصة مدرستنا علمتنا",
-  "short_name": "مدرستنا",
-  "description": "منصة تعليمية مجانية في مصر - مبادرة من أجل مصر - المهندس محمد عصام",
-  "start_url": "/elnigm1/madrasetna/",
-  "scope": "/elnigm1/madrasetna/",
+  "name": "منصة الراسخون في العلم",
+  "short_name": "الراسخون في العلم",
+  "description": "منصة تعليمية مصرية رائدة لمحو الأمية ونشر الوعي - مبادرة من أجل مصر - المهندس محمد عصام الفيومي",
+  "start_url": "/elnigm1/",
+  "scope": "/elnigm1/",
   "display": "standalone",
   "background_color": "#2C1810",
-  "theme_color": "#FFD700",
+  "theme_color": "#2C1810",
   "orientation": "portrait",
   "lang": "ar",
   "dir": "rtl",
   "icons": [
     {
-      "src": "/elnigm1/madrasetna/images/logo-72x72.png",
+      "src": "/elnigm1/images/logo.png",
       "sizes": "72x72",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/elnigm1/madrasetna/images/logo-96x96.png",
+      "src": "/elnigm1/images/logo.png",
       "sizes": "96x96",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/elnigm1/madrasetna/images/logo-128x128.png",
+      "src": "/elnigm1/images/logo.png",
       "sizes": "128x128",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/elnigm1/madrasetna/images/logo-144x144.png",
+      "src": "/elnigm1/images/logo.png",
       "sizes": "144x144",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/elnigm1/madrasetna/images/logo-152x152.png",
+      "src": "/elnigm1/images/logo.png",
       "sizes": "152x152",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/elnigm1/madrasetna/images/logo-192x192.png",
+      "src": "/elnigm1/images/logo.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/elnigm1/madrasetna/images/logo-384x384.png",
+      "src": "/elnigm1/images/logo.png",
       "sizes": "384x384",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/elnigm1/madrasetna/images/logo-512x512.png",
+      "src": "/elnigm1/images/logo.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
@@ -62,7 +62,7 @@
   ],
   "screenshots": [
     {
-      "src": "/elnigm1/madrasetna/images/screenshot.png",
+      "src": "/elnigm1/images/logo.png",
       "sizes": "1080x1920",
       "type": "image/png"
     }
@@ -70,13 +70,13 @@
   "categories": ["education", "learning"],
   "shortcuts": [
     {
-      "name": "الدورات المجانية",
-      "short_name": "الدورات",
-      "description": "جميع الدورات التعليمية المجانية",
-      "url": "/elnigm1/madrasetna/#courses",
+      "name": "ابدأ رحلة الرسوخ",
+      "short_name": "الرسوخ",
+      "description": "ابدأ رحلة العلم والمعرفة بالمنصة",
+      "url": "/elnigm1/#slogans",
       "icons": [
         {
-          "src": "/elnigm1/madrasetna/images/logo-96x96.png",
+          "src": "/elnigm1/images/logo.png",
           "sizes": "96x96"
         }
       ]
@@ -85,10 +85,10 @@
       "name": "المهندس محمد عصام",
       "short_name": "المهندس",
       "description": "معلومات عن مؤسس المنصة",
-      "url": "/elnigm1/madrasetna/#engineer",
+      "url": "https://mo-portifolio0.netlify.app/",
       "icons": [
         {
-          "src": "/elnigm1/madrasetna/images/logo-96x96.png",
+          "src": "/elnigm1/images/logo.png",
           "sizes": "96x96"
         }
       ]
