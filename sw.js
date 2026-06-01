@@ -1,16 +1,14 @@
-// sw.js - Service Worker لمنصة مدرستنا علمتنا
-const CACHE_NAME = 'madrasetna-v1';
-const OFFLINE_URL = '/elnigm1/madrasetna/offline.html';
+// sw.js - Service Worker لمنصة الراسخون في العلم
+const CACHE_NAME = 'alrasikhun-v2'; // تم تحديث الإصدار لتحديث الكاش تلقائياً عند المستخدمين
+const OFFLINE_URL = '/elnigm1/offline.html';
 
 // الملفات التي سيتم تخزينها مؤقتاً
 const urlsToCache = [
-  '/elnigm1/madrasetna/',
-  '/elnigm1/madrasetna/index.html',
-  '/elnigm1/madrasetna/css/style.css',
-  '/elnigm1/madrasetna/js/main.js',
-  '/elnigm1/madrasetna/images/logo.png',
-  '/elnigm1/madrasetna/images/logo-192x192.png',
-  '/elnigm1/madrasetna/images/logo-512x512.png'
+  '/elnigm1/',
+  '/elnigm1/index.html',
+  '/elnigm1/css/style.css',
+  '/elnigm1/js/main.js',
+  '/elnigm1/images/logo.png'
 ];
 
 // تثبيت Service Worker
@@ -47,14 +45,14 @@ self.addEventListener('push', (event) => {
     data = event.data.json();
   }
   
-  const title = data.title || '📚 منصة مدرستنا علمتنا';
+  const title = data.title || '📚 منصة الراسخون في العلم';
   const options = {
     body: data.body || 'تم إضافة محتوى تعليمي جديد! ادخل الآن للاستفادة',
-    icon: '/elnigm1/madrasetna/images/logo-192x192.png',
-    badge: '/elnigm1/madrasetna/images/logo-72x72.png',
+    icon: '/elnigm1/images/logo.png',
+    badge: '/elnigm1/images/logo.png',
     vibrate: [200, 100, 200],
     data: {
-      url: data.url || '/elnigm1/madrasetna/'
+      url: data.url || '/elnigm1/'
     },
     actions: [
       {
@@ -103,7 +101,7 @@ self.addEventListener('fetch', (event) => {
         return response;
       });
     }).catch(() => {
-      return caches.match('/elnigm1/madrasetna/offline.html');
+      return caches.match('/elnigm1/offline.html');
     })
   );
 });
