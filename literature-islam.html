@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    
+    <title>الأدب والإسلام | منصة الراسخون في العلم</title>
+    <meta name="description" content="قسم الأدب والإسلام في منصة الراسخون في العلم - نصوص أدبية وقيم إسلامية تحت إشراف نخبة من العلماء لتعزيز الوعي والرسوخ المعرفي.">
+    <meta name="keywords" content="الراسخون في العلم, الأدب الإسلامي, دروس دينية، قيم إسلامية، محو الجهل، المهندس محمد عصام الفيومي">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        /* تنسيقات خاصة بصفحة الأدب والإسلام - هوية الراسخون */
+        .literature-header {
+            background: linear-gradient(135deg, #1e3a2f, #0f2b22);
+            padding: 3rem 0;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .literature-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.05"><path fill="%23ffffff" d="M50,0 L61,35 L98,35 L68,57 L79,92 L50,70 L21,92 L32,57 L2,35 L39,35 Z"/></svg>') repeat;
+            background-size: 40px;
+            pointer-events: none;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 1rem;
+            font-weight: 500;
+            background: rgba(255,255,255,0.15);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        .back-link:hover {
+            background: rgba(255,255,255,0.25);
+        }
+        
+        .literature-header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            font-family: 'Amiri', serif;
+            font-weight: 700;
+        }
+        
+        .literature-header p {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        .coming-soon-section {
+            padding: 4rem 0;
+            background: #fefaf5;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .coming-soon-card {
+            max-width: 750px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            border: 1px solid #e8dcc8;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .coming-soon-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #d4af37, #f5e6b3);
+            opacity: 0.1;
+            border-radius: 0 0 0 100%;
+        }
+        
+        .coming-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #1e3a2f, #2c5a48);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2.5rem;
+            color: #d4af37;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .coming-soon-card h2 {
+            font-size: 1.8rem;
+            color: #1e3a2f;
+            margin-bottom: 1rem;
+            font-family: 'Amiri', serif;
+            font-weight: 700;
+        }
+        
+        .coming-soon-card .subtitle {
+            font-size: 1rem;
+            color: #b8860b;
+            margin-bottom: 1.5rem;
+            font-family: 'Cairo', sans-serif;
+            font-weight: 600;
+        }
+        
+        .coming-soon-card p {
+            color: #4a5b4a;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            font-family: 'Cairo', sans-serif;
+            font-size: 0.95rem;
+        }
+        
+        .message-box {
+            background: #f8f3e8;
+            border-right: 4px solid #d4af37;
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            text-align: right;
+            border-radius: 16px;
+        }
+        
+        .message-box i {
+            color: #d4af37;
+            margin-left: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .message-box p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #3a4a3a;
+        }
+        
+        .features-list {
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #f0ebe0;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: #1e3a2f;
+            font-family: 'Cairo', sans-serif;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .feature-item i {
+            color: #d4af37;
+        }
+        
+        .notify-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #1e3a2f, #2c5a48);
+            color: white;
+            text-decoration: none;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: all 0.3s;
+            font-family: 'Cairo', sans-serif;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .notify-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(30,58,47,0.3);
+        }
+        
+        .quran-verse {
+            font-family: 'Amiri', serif;
+            font-size: 1.2rem;
+            color: #b8860b;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e8dcc8;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .literature-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .coming-soon-card {
+                padding: 2.5rem 1.5rem;
+                margin: 0 1rem;
+            }
+            
+            .features-list {
+                gap: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="الراسخون في العلم" class="logo-img">
+                    <span class="logo-text">الراسخون <span class="logo-highlight">في العلم</span></span>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="kids.html"><i class="fas fa-graduation-cap"></i> الأساسيات</a></li>
+                <li><a href="tech.html"><i class="fas fa-microchip"></i> التكنولوجيا</a></li>
+                <li><a href="sociology.html"><i class="fas fa-users"></i> علم الاجتماع</a></li>
+                <li><a href="literature-islam.html" class="active"><i class="fas fa-mosque"></i> الأدب والإسلام</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <section class="literature-header">
+        <div class="container">
+            <a href="index.html" class="back-link"><i class="fas fa-arrow-right"></i> العودة للرئيسية</a>
+            <h1><i class="fas fa-book-quran"></i> الأدب والإسلام</h1>
+            <p>نصوصٌ ترتقي بالروح، وعلمٌ يرسخ العقيدة، وفصاحةٌ تشرقُ بالبيان</p>
+        </div>
+    </section>
+
+    <section class="coming-soon-section">
+        <div class="container">
+            <div class="coming-soon-card">
+                <div class="coming-icon">
+                    <i class="fas fa-mosque"></i>
+                </div>
+                
+                <h2>📖 قريباً في رحاب الراسخون</h2>
+                <div class="subtitle">
+                    <i class="fas fa-shield-halved"></i> قسمٌ يُبنى على أسسٍ علمية ودينية رصينة <i class="fas fa-shield-halved"></i>
+                </div>
+                
+                <p>
+                    لأن العلم بالدين أمانة، نسعى في <strong>منصة الراسخون في العلم</strong> لتقديم محتوىً ديني وأدبي موثوق، 
+                    يجمع بين أصالة التراث وحداثة التقديم، تحت إشراف نخبة من العلماء المتخصصين. نحن الآن بصدد:
+                </p>
+                
+                <div class="features-list">
+                    <span class="feature-item"><i class="fas fa-user-check"></i> استقطاب كبار العلماء</span>
+                    <span class="feature-item"><i class="fas fa-scroll"></i> مراجعة المتون العلمية</span>
+                    <span class="feature-item"><i class="fas fa-pen-fancy"></i> صياغة الأدب الرفيع</span>
+                    <span class="feature-item"><i class="fas fa-microphone-lines"></i> إنتاج دروس مرئية</span>
+                </div>
+                
+                <div class="message-box">
+                    <i class="fas fa-lightbulb"></i>
+                    <p><strong>دعوة للتعاون:</strong> نفتح أبوابنا للمقترحات الهادفة وترشيحات القامات العلمية للمساهمة في بناء هذا الصرح المعرفي.</p>
+                </div>
+                
+                <p>
+                    <strong>ماذا ينتظركم في هذا القسم؟</strong>
+                </p>
+                <p style="text-align: right; max-width: 400px; margin: 0 auto 1.5rem; display: block;">
+                    • تفسير القرآن الكريم بأسلوب ميسر<br>
+                    • شرح جوامع الكلم من السنة النبوية<br>
+                    • روائع الأدب العربي والشعر الإسلامي<br>
+                    • سير الراسخين في العلم عبر التاريخ<br>
+                    • دروس الفقه التي تمس حياة المواطن اليومية
+                </p>
+                
+                <button class="notify-btn" id="notifyBtn">
+                    <i class="fas fa-bell"></i> أبلغني عند بدء الدروس
+                </button>
+                
+                <div class="quran-verse">
+                    <i class="fas fa-quote-right"></i>
+                    قُلْ هَلْ يَسْتَوِي الَّذِينَ يَعْلَمُونَ وَالَّذِينَ لَا يَعْلَمُونَ
+                    <i class="fas fa-quote-left"></i>
+                    <div style="font-size: 0.85rem; font-family: 'Cairo', sans-serif; margin-top: 8px;">(سورة الزمر: 9)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- START FOOTER -->
+<footer class="footer">
+
+    <div class="footer-overlay"></div>
+
+    <div class="container">
+
+        <div class="footer-content">
+
+            <!-- اللوجو والوصف -->
+            <div class="footer-brand">
+                <h2>
+                    <i class="fas fa-book-reader"></i>
+                    الراسخون <span>في العلم</span>
+                </h2>
+                <p>
+                    منصة تعليمية مصرية تهدف لبناء جيل واعٍ بالعلم والتكنولوجيا والقيم الإسلامية الراقية.
+                </p>
+            </div>
+
+            <!-- تعريف وتحميل تطبيق I Top -->
+            <div class="footer-app">
+                <div class="app-header">
+                    <img src="images/itop.png" alt="I Top Logo" class="app-logo">
+                    <h3>تطبيق I Top</h3>
+                </div>
+                <p class="app-desc">
+                    أول تطبيق تواصل إجتماعي مصري يدعم حرية الرأي ويحافظ على القيم والأخلاق، ويدعم انتشار المحتوى النظيف بما يناسب مجتمعنا، ويهتم بالتطوير المستمر بما يتناسب مع المنافسة العالمية.
+                </p>
+                <div class="download-links">
+                    <a href="https://itopapp.page.link/android" target="_blank" class="download-btn google-play">
+                        <i class="fab fa-google-play"></i> للأندرويد
+                    </a>
+                    <a href="https://itopapp.page.link/ios" target="_blank" class="download-btn app-store">
+                        <i class="fab fa-apple"></i> للأيفون
+                    </a>
+                    <a href="https://appgallery.huawei.com/#/app/C102627445" target="_blank" class="download-btn huawei-store">
+                        <i class="fas fa-shopping-bag"></i> متجر هواوي
+                    </a>
+                </div>
+            </div>
+
+            <!-- الروابط -->
+            <div class="footer-links">
+                <h3>أقسام المنصة</h3>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-house"></i> الرئيسية</a></li>
+                    <li><a href="kids.html"><i class="fas fa-seedling"></i> قسم الأساسيات</a></li>
+                    <li><a href="tech.html"><i class="fas fa-microchip"></i> قسم التكنولوجيا</a></li>
+                    <li><a href="sociology.html"><i class="fas fa-users"></i> علم الإجتماع</a></li>
+                    <li><a href="literature-islam.html"><i class="fas fa-mosque"></i> آداب وقيم إسلامية</a></li>
+                </ul>
+            </div>
+
+            <!-- اليوتيوب -->
+            <div class="footer-youtube">
+                <h3>القناة الرسمية</h3>
+                <a href="https://youtube.com/channel/UCWuaWYwaAXgtk9m1BdjxhRA?si=fjnyBOmg4UOV6wqh" target="_blank" class="youtube-btn">
+                    <i class="fab fa-youtube"></i>
+                    <span>المتدبر محمد عصام</span>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- الحقوق -->
+        <div class="footer-bottom">
+            <p>
+                جميع الحقوق محفوظة © <span id="year"></span> منصة الراسخون في العلم
+            </p>
+        </div>
+
+    </div>
+
+</footer>
+<!-- END FOOTER -->
+
+
+
+
+<!-- START FOOTER-->
+<style>
+    /* ==========================================
+   تنسيقات الفوتر العامة (Footer Base Styles)
+============================================ */
+.footer {
+    position: relative;
+    background-color: #11141a; /* لون داكن فخم خلف الفوتر */
+    color: #ffffff;
+    padding: 60px 0 20px 0;
+    font-family: 'Cairo', sans-serif; /* يفضل استخدام خط ك Cairo للمواقع العربية */
+    direction: rtl; /* لضمان الترتيب الصحيح من اليمين لليسار */
+    overflow: hidden;
+}
+
+.footer-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 20%, rgba(212, 175, 55, 0.05), transparent 60%);
+    pointer-events: none;
+}
+
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+/* العناوين الافتراضية داخل الفوتر */
+.footer h3 {
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #d4af37; /* خط ذهبي صغير تحت العناوين */
+}
+
+/* ==========================================
+   1. قسم اللوجو والوصف (Brand)
+============================================ */
+.footer-brand {
+    flex: 1.5;
+    min-width: 250px;
+}
+
+.footer-brand h2 {
+    color: #ffffff;
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-brand h2 i {
+    color: #d4af37; /* لون الأيقونة ذهبي */
+}
+
+.footer-brand h2 span {
+    color: #d4af37;
+    font-weight: 300;
+}
+
+.footer-brand p {
+    color: #a0aec0;
+    line-height: 1.8;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* ==========================================
+   2. قسم تطبيق I Top (الجديد)
+============================================ */
+.footer-app {
+    flex: 1.5;
+    min-width: 280px;
+}
+
+.footer-app .app-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+/* الإطار المضيء الذهبي الخفيف حول الأيقونة */
+.footer-app .app-logo {
+    width: 55px;
+    height: 55px;
+    border-radius: 4px;
+    object-fit: cover;
+    border: 1px solid #fff ;
+    box-shadow: 0 0 12px rgba(212, 175, 55, 0.25); /* توهج ذهبي هادئ */
+    transition: all 0.3s ease;
+}
+
+.footer-app .app-logo:hover {
+    box-shadow: 0 0 18px rgba(212, 175, 55, 0.6); /* زيادة التوهج عند التمرير */
+    transform: translateY(-3px);
+}
+
+.footer-app .app-desc {
+    color: #a0aec0;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* أزرار المتاجر */
+.footer-app .download-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-app .download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.03);
+    color: #e2e8f0;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+}
+
+.footer-app .download-btn i {
+    font-size: 1.1rem;
+}
+
+/* ألوان الهوفر عند الوقوف على أزرار التحميل */
+.footer-app .download-btn.google-play:hover {
+    background: #34a853;
+    border-color: #34a853;
+    color: #fff;
+}
+
+.footer-app .download-btn.app-store:hover {
+    background: #000000;
+    border-color: #333;
+    color: #fff;
+}
+
+.footer-app .download-btn.huawei-store:hover {
+    background: #e6162d;
+    border-color: #e6162d;
+    color: #fff;
+}
+
+/* ==========================================
+   3. قسم الروابط والأقسام (Links)
+============================================ */
+.footer-links {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #a0aec0;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-links a i {
+    font-size: 0.85rem;
+    color: rgba(212, 175, 55, 0.6);
+}
+
+.footer-links a:hover {
+    color: #d4af37;
+    transform: translateX(-5px); /* حركة خفيفة لليمين عند الهوفر */
+}
+
+/* ==========================================
+   4. قسم اليوتيوب (YouTube)
+============================================ */
+.footer-youtube {
+    flex: 1;
+    min-width: 220px;
+}
+
+.footer-youtube .youtube-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #ff0000;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.footer-youtube .youtube-btn:hover {
+    background: #cc0000;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 0, 0, 0.4);
+}
+
+/* ==========================================
+   5. حقوق النشر (Footer Bottom)
+============================================ */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 20px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #718096;
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+/* ==========================================
+   التوافق مع الشاشات الصغيرة (Responsive)
+============================================ */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .footer-brand, .footer-app, .footer-links, .footer-youtube {
+        flex: 1 1 100%;
+    }
+    
+    .footer-links a:hover {
+        transform: none; /* إلغاء التزحزح على الموبايل لراحة العين */
+    }
+}
+
+</style>
+<!-- END FOOTER  -->
+
+
+<script>
+document.getElementById("year").textContent =
+new Date().getFullYear();
+</script>
+
+<!-- END FOOTER -->
+
+    <script src="js/main.js"></script>
+    <script>
+        const notifyBtn = document.getElementById('notifyBtn');
+        if (notifyBtn) {
+            notifyBtn.addEventListener('click', () => {
+                alert('📝 تم تسجيل اهتمامك بنجاح! سنقوم بإخطارك فور افتتاح قسم الأدب والإسلام تحت إشراف العلماء. (للتواصل المباشر: 01279350952)');
+            });
+        }
+    </script>
+</body>
+</html>

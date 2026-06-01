@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;700&display=swap" rel="stylesheet">
+    <title> منصة الراسخون في العلم</title>
+    <style>
+        * { box-sizing: border-box; }
+        :root { --bg-color: #fef2f2; --header-red: #b91c1c; --success: #22c55e; --error: #ef4444; }
+        body { font-family: 'Alexandria', sans-serif; background-color: var(--bg-color); margin: 0; min-height: 100vh; overflow-x: hidden; }
+        
+        header { width: 100%; background: white; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #fee2e2; position: sticky; top: 0; z-index: 100; }
+        .home-link { text-decoration: none; color: white; background-color: var(--header-red); padding: 8px 16px; border-radius: 20px; font-weight: bold; font-size: 0.85rem; }
+
+        .banner { background: linear-gradient(135deg, var(--header-red), #991b1b); color: white; padding: 20px; text-align: center; }
+        .logo { width: 100px; height: 100px; margin: 0 auto 10px; display: block; border-radius: 50%; background: white; padding: 5px; object-fit: cover; }
+        
+        .main-container { width: 95%; max-width: 600px; margin: 20px auto; background: white; padding: 20px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .btn-group { display: grid; gap: 12px; margin-top: 20px; }
+        .btn { padding: 15px; border: none; border-radius: 10px; color: white; font-weight: bold; cursor: pointer; font-family: 'Alexandria', sans-serif; }
+        
+        .option { border: 2px solid #e2e8f0; padding: 12px; margin: 8px 0; border-radius: 8px; cursor: pointer; font-family: 'Alexandria', sans-serif; transition: 0.2s; }
+        .option.correct { background-color: var(--success) !important; color: white; border-color: var(--success); }
+        .option.wrong { background-color: var(--error) !important; color: white; border-color: var(--error); }
+        
+        .nav-controls { display: flex; justify-content: space-between; margin-top: 20px; gap: 10px; }
+        .nav-btn { flex: 1; padding: 12px; border-radius: 8px; border: none; background: #64748b; color: white; font-family: 'Alexandria', sans-serif; cursor: pointer; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="home-link"> الرئيسية</a>
+    <span style="font-weight: bold;">منصة الراسخون في العلم</span>
+</header>
+
+<div class="banner">
+    <img src="images/profile.png" class="logo" alt="المهندس محمد عصام الفيومي">
+    <h1>أسئلة ذكاء</h1>
+    <p>المهندس محمد عصام الفيومي</p>
+</div>
+
+<div class="main-container" id="menu">
+    <h2 style="text-align: center; color: var(--header-red);">اختر قسماً</h2>
+    <div class="btn-group">
+        <button class="btn" style="background:#7c3aed" onclick="startQuiz('space')">الفضاء والكون</button>
+        <button class="btn" style="background:#d97706" onclick="startQuiz('egypt')">تاريخ مصر</button>
+        <button class="btn" style="background:#059669" onclick="startQuiz('islam')">التاريخ الإسلامي</button>
+        <button class="btn" style="background:#0891b2" onclick="startQuiz('geo')">الجغرافيا</button>
+        <button class="btn" style="background:#ea580c" onclick="startQuiz('math')">الرياضيات</button>
+        <button class="btn" style="background:#be123c" onclick="startQuiz('science')">العلماء والمخترعون</button>
+    </div>
+</div>
+
+<div class="main-container hidden" id="quiz">
+    <h3 id="category-title" style="color: var(--header-red);"></h3>
+    <p id="q-counter" style="font-weight:bold;"></p>
+    <h2 id="question-text"></h2>
+    <div id="options-container"></div>
+    <div class="nav-controls">
+        <button class="nav-btn" onclick="prevQuestion()" id="prev-btn">السابق</button>
+        <button class="nav-btn" style="background:#ef4444;" onclick="location.reload()">اختر أسئلة اخرى</button>
+        <button class="nav-btn" onclick="nextQuestion()" id="next-btn" disabled>التالي</button>
+    </div>
+</div>
+
+<script>
+const quizData = {
+    space: [
+        {q: "ما هو الكوكب الذي يمتلك أكبر قمر في المجموعة الشمسية (تيتان)؟", a: ["المشتري", "زحل", "نبتون", "المريخ"], c: 1},
+        {q: "ما هو الكوكب الذي يدور حول الشمس 'بجانبه' أي أن محوره مائل جداً؟", a: ["أورانوس", "الزهرة", "زحل", "المشتري"], c: 0},
+        {q: "ما هو اسم المجرة التي تنتمي إليها مجموعتنا الشمسية؟", a: ["أندروميدا", "درب التبانة", "مسييه", "سديم السرطان"], c: 1},
+        {q: "كم تبلغ تقريباً درجة حرارة سطح الشمس؟", a: ["3000 درجة", "5500 درجة", "10000 درجة", "15000 درجة"], c: 1},
+        {q: "ما هو الكوكب الذي يمتلك أقصر يوم (دورة حول نفسه)؟", a: ["الأرض", "المشتري", "عطارد", "المريخ"], c: 1},
+        {q: "أي كوكب يلقب بـ 'توأم الأرض' نظراً لتقارب الحجم؟", a: ["المريخ", "عطارد", "الزهرة", "نبتون"], c: 2},
+        {q: "ما هي الظاهرة التي تحدث عند مرور القمر بين الأرض والشمس؟", a: ["خسوف", "كسوف", "المد والجزر", "الاستطالة"], c: 1},
+        {q: "ما الذي يربط النجوم في المجرة؟", a: ["الجاذبية", "الطاقة المظلمة", "المغناطيسية", "الضوء"], c: 0},
+        {q: "ما هو أقرب نجم للأرض بعد الشمس؟", a: ["النجم القطبي", "بروكسيما سنتوري", "سيريوس", "المنكب الجوزاء"], c: 1},
+        {q: "ماذا يسمى انفجار النجوم الضخمة في نهاية حياتها؟", a: ["مستعر أعظم (سوبرنوفا)", "قزم أبيض", "نجم نيتروني", "ثقب أسود"], c: 0}
+    ],
+    egypt: [
+        {q: "من هو الملك الموحد للقطرين (الوجه البحري والقبلي)؟", a: ["خوفو", "الملك مينا", "رمسيس الثاني", "تحتمس الثالث"], c: 1},
+        {q: "ما هو الاسم القديم لمدينة طيبة (عاصمة الدولة الحديثة)؟", a: ["منف", "واست", "هليوبوليس", "أون"], c: 1},
+        {q: "في عهد أي ملك تم بناء الهرم المدرج في سقارة؟", a: ["زوسر", "خفرع", "خوفو", "سنفرو"], c: 0},
+        {q: "من هي الملكة التي قامت برحلتها الشهيرة إلى بلاد بونت؟", a: ["نفرتيتي", "حتشبسوت", "كليوباترا", "تيتي شري"], c: 1},
+        {q: "ما هو المعركة التي انتصر فيها رمسيس الثاني على الحيثيين؟", a: ["مجدو", "قادش", "حطين", "عين جالوت"], c: 1},
+        {q: "أي أسرة هي التي طردت الهكسوس من مصر؟", a: ["الأسرة 17", "الأسرة 18", "الأسرة 12", "الأسرة 26"], c: 1},
+        {q: "ماذا يعني اسم 'توت عنخ آمون'؟", a: ["صورة آمون الحية", "قوة الإله آمون", "المحبوب من آمون", "ملك الأرض"], c: 0},
+        {q: "في أي عاصمة حكم أخناتون مصر؟", a: ["منف", "طيبة", "أخيتاتون", "الإسكندرية"], c: 2},
+        {q: "ما هو العصر الذي سُمي بعصر بناة الأهرامات؟", a: ["الدولة القديمة", "الدولة الوسطى", "الدولة الحديثة", "العصر المتأخر"], c: 0},
+        {q: "ما هي المادة التي كان يستخدمها قدماء المصريين في التحنيط؟", a: ["ملح النطرون", "الرماد", "الزيوت المعدنية", "الجبس"], c: 0}
+    ],
+    islam: [
+        {q: "في أي عام هجري وقعت غزوة الخندق؟", a: ["3 هـ", "5 هـ", "7 هـ", "9 هـ"], c: 1},
+        {q: "من هو القائد المسلم الذي لقب بـ 'سيف الله المسلول'؟", a: ["علي بن أبي طالب", "خالد بن الوليد", "سعد بن أبي وقاص", "عمرو بن العاص"], c: 1},
+        {q: "في عهد أي خليفة تم جمع القرآن الكريم في مصحف واحد؟", a: ["أبو بكر الصديق", "عمر بن الخطاب", "عثمان بن عفان", "علي بن أبي طالب"], c: 2},
+        {q: "ما هي المدينة التي كانت عاصمة الدولة الأموية؟", a: ["المدينة", "الكوفة", "دمشق", "بغداد"], c: 2},
+        {q: "من هو الصحابي الذي أشار بحفر الخندق؟", a: ["سلمان الفارسي", "عمر بن الخطاب", "حمزة بن عبد المطلب", "أبو بكر"], c: 0},
+        {q: "في أي معركة استشهد الصحابي جعفر بن أبي طالب؟", a: ["مؤتة", "تبوك", "حنين", "خيبر"], c: 0},
+        {q: "من هو الخليفة الذي أنشأ الدواوين في الإسلام؟", a: ["عثمان بن عفان", "عمر بن الخطاب", "علي بن أبي طالب", "معاوية"], c: 1},
+        {q: "ما هي أول عاصمة للدولة العباسية؟", a: ["بغداد", "سامراء", "الهاشمية", "الكوفة"], c: 3},
+        {q: "كم سنة استمرت فترة خلافة أبي بكر الصديق؟", a: ["سنتان", "4 سنوات", "6 سنوات", "10 سنوات"], c: 0},
+        {q: "ما هو لقب أمين هذه الأمة؟", a: ["أبو عبيدة بن الجراح", "أبو الدرداء", "معاذ بن جبل", "حذيفة بن اليمان"], c: 0}
+    ],
+    geo: [
+        {q: "ما هو أعمق خندق محيطي في العالم؟", a: ["خندق ماريانا", "خندق تونغا", "خندق بورتوريكو", "خندق جاوة"], c: 0},
+        {q: "ما هي الدولة التي تمتلك أطول ساحل في العالم؟", a: ["روسيا", "أستراليا", "كندا", "النرويج"], c: 2},
+        {q: "ما هو المضيق الذي يفصل بين قارتي أوروبا وأفريقيا؟", a: ["هرمز", "جبل طارق", "البوسفور", "باب المندب"], c: 1},
+        {q: "ما هي عاصمة أستراليا؟", a: ["سيدني", "ملبورن", "كانبرا", "بيرث"], c: 2},
+        {q: "ما هو البحر الذي يسمى 'البحر الميت' لشدة ملوحته؟", a: ["بحر قزوين", "البحر الميت", "البحر الأسود", "البحر الأحمر"], c: 1},
+        {q: "في أي قارة تقع جبال الأنديز؟", a: ["آسيا", "أوروبا", "أمريكا الجنوبية", "أفريقيا"], c: 2},
+        {q: "ما هي الدولة التي تسمى 'بلاد الأرز'؟", a: ["الأردن", "لبنان", "سوريا", "تركيا"], c: 1},
+        {q: "ما هو أطول سلسلة جبال في العالم (تحت الماء)؟", a: ["الهيمالايا", "الأنديز", "حيد وسط المحيط", "أطلس"], c: 2},
+        {q: "ما هي أكبر جزيرة في العالم (بدون احتساب القارات)؟", a: ["مدغشقر", "جرينلاند", "بورنيو", "غينيا الجديدة"], c: 1},
+        {q: "ما هو الخط الذي يقسم الأرض إلى نصفين شمالي وجنوبي؟", a: ["خط جرينتش", "مدار السرطان", "خط الاستواء", "مدار الجدي"], c: 2}
+    ],
+    math: [
+        {q: "ما هو العدد الأولي الذي يلي 13؟", a: ["14", "15", "17", "19"], c: 2},
+        {q: "كم مجموع زوايا الشكل الخماسي الداخلية؟", a: ["360", "540", "720", "180"], c: 1},
+        {q: "ما قيمة (X) في المعادلة: 2X + 5 = 15؟", a: ["4", "5", "6", "10"], c: 1},
+        {q: "ما هو العدد الذي يمثل 'نسبة ذهبية' تقريباً؟", a: ["1.618", "2.718", "3.141", "1.414"], c: 0},
+        {q: "أي من الأعداد التالية هو عدد 'كامل' (مجموع قواسمه يساوي العدد نفسه)؟", a: ["6", "8", "10", "12"], c: 0},
+        {q: "ما هي نتيجة 2 أس 5؟", a: ["10", "25", "32", "64"], c: 2},
+        {q: "ما هو اللوغاريتم الطبيعي للعدد 1؟", a: ["1", "0", "e", "10"], c: 1},
+        {q: "ما هو تعريف المثلث القائم الزاوية؟", a: ["كل زواياه حادة", "إحدى زواياه 90", "إحدى زواياه منفرجة", "أضلاعه متساوية"], c: 1},
+        {q: "إذا كان محيط مربع 20 سم، فكم مساحته؟", a: ["25", "40", "100", "5"], c: 0},
+        {q: "ما هو العدد الزوجي الوحيد الأولي؟", a: ["0", "1", "2", "4"], c: 2}
+    ],
+    science: [
+        {q: "ما هو الرمز الكيميائي لعنصر الصوديوم؟", a: ["S", "Na", "So", "Sd"], c: 1},
+        {q: "أي كوكب يملك أكبر غلاف جوي من ثاني أكسيد الكربون؟", a: ["المريخ", "الزهرة", "الأرض", "عطارد"], c: 1},
+        {q: "ما هو العضو الذي يفرز الأنسولين في جسم الإنسان؟", a: ["الكبد", "المعدة", "البنكرياس", "المرارة"], c: 2},
+        {q: "ما هي الوحدة المستخدمة لقياس المقاومة الكهربائية؟", a: ["فولت", "أمبير", "أوم", "واط"], c: 2},
+        {q: "ما هو أسرع جسم في الكون؟", a: ["الصوت", "الضوء", "الإلكترون", "النيوترينو"], c: 1},
+        {q: "ما هو الغاز الذي يشكل النسبة الأكبر من غلافنا الجوي؟", a: ["الأكسجين", "ثاني أكسيد الكربون", "النيتروجين", "الهيدروجين"], c: 2},
+        {q: "ما هي العملية التي تقوم فيها الخلية بنسخ الحمض النووي؟", a: ["التحلل", "التضاعف", "الانقسام", "الانتشار"], c: 1},
+        {q: "ما هو الرمز الكيميائي للماء الثقيل؟", a: ["H2O", "D2O", "HO2", "H2O2"], c: 1},
+        {q: "من هو مكتشف البنسلين؟", a: ["ألكسندر فلمنج", "لويس باستور", "روبرت كوخ", "إدوارد جينر"], c: 0},
+        {q: "ما هو التفاعل الذي يطلق الطاقة في النجوم؟", a: ["الاندماج النووي", "الانشطار النووي", "الاحتراق الكيميائي", "التحلل الإشعاعي"], c: 0}
+    ]
+};
+
+let currentCategory = "", currentIdx = 0, score = 0, answered = false;
+
+function startQuiz(cat) {
+    currentCategory = cat; currentIdx = 0; score = 0;
+    document.getElementById('menu').classList.add('hidden');
+    document.getElementById('quiz').classList.remove('hidden');
+    renderQuestion();
+}
+
+function renderQuestion() {
+    answered = false;
+    document.getElementById('next-btn').disabled = true;
+    const data = quizData[currentCategory][currentIdx];
+    document.getElementById('q-counter').innerText = `سؤال ${currentIdx + 1} من 10`;
+    document.getElementById('question-text').innerText = data.q;
+    const optDiv = document.getElementById('options-container');
+    optDiv.innerHTML = "";
+    data.a.forEach((opt, i) => {
+        const div = document.createElement('div');
+        div.className = 'option';
+        div.innerText = opt;
+        div.onclick = () => checkAnswer(i, div);
+        optDiv.appendChild(div);
+    });
+}
+
+function checkAnswer(idx, div) {
+    if(answered) return;
+    answered = true;
+    const data = quizData[currentCategory][currentIdx];
+    if(idx === data.c) {
+        div.classList.add('correct');
+        score++;
+    } else {
+        div.classList.add('wrong');
+        document.getElementById('options-container').children[data.c].classList.add('correct');
+    }
+    document.getElementById('next-btn').disabled = false;
+    document.getElementById('next-btn').innerText = (currentIdx === 9) ? "إنهاء" : "التالي";
+}
+
+function nextQuestion() {
+    if(currentIdx < 9) { currentIdx++; renderQuestion(); }
+    else { finishQuiz(); }
+}
+
+function prevQuestion() { if(currentIdx > 0) { currentIdx--; renderQuestion(); } }
+
+function finishQuiz() {
+    document.getElementById('quiz').innerHTML = `
+        <h2 style="text-align:center;">انتهى الاختبار</h2>
+        <p style="font-size:1.5rem; text-align:center;">نتيجتك: ${score} من 10</p>
+        <button class="btn" style="background:var(--header-red); width:100%;" onclick="location.reload()">العودة للرئيسية</button>
+    `;
+}
+</script>
+</body>
+</html>

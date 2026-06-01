@@ -1,0 +1,27 @@
+/* TEAM */
+Founder and Developer: المهندس محمد عصام
+Role: Full Stack Developer & Educational Platform Founder
+Contact: 01279350952
+Portfolio: https://hamoessam2024.github.io/mocode25/
+
+/* SITE */
+Platform Name: منصة مدرستنا علمتنا
+Mission: تقديم التعليم المجاني لجميع الطلاب في مصر
+Initiative: من أجل مصر
+Launch Date: 2024
+Last Update: 2026-01-24
+Technologies: HTML5, CSS3, JavaScript, SEO Optimized
+Target Audience: جميع طلاب مصر وجميع المهتمين بالتعليم المجاني
+
+/* SEO KEYWORDS */
+- منصة مدرستنا علمتنا
+- مدرستنا علمتنا
+- التعليم المجاني
+- من أجل مصر
+- المهندس محمد عصام
+- تعليم مجاني
+- منصة تعليمية مصرية
+
+/* SOCIAL */
+Facebook: https://www.facebook.com/share/1A6ZmYtVdX/
+GitHub: https://hamoessam2024.github.io/mocode25/

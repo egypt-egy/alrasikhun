@@ -1,0 +1,97 @@
+{
+  "name": "منصة مدرستنا علمتنا",
+  "short_name": "مدرستنا",
+  "description": "منصة تعليمية مجانية في مصر - مبادرة من أجل مصر - المهندس محمد عصام",
+  "start_url": "/elnigm1/madrasetna/",
+  "scope": "/elnigm1/madrasetna/",
+  "display": "standalone",
+  "background_color": "#2C1810",
+  "theme_color": "#FFD700",
+  "orientation": "portrait",
+  "lang": "ar",
+  "dir": "rtl",
+  "icons": [
+    {
+      "src": "/elnigm1/madrasetna/images/logo-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/elnigm1/madrasetna/images/logo-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/elnigm1/madrasetna/images/logo-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/elnigm1/madrasetna/images/logo-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/elnigm1/madrasetna/images/logo-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/elnigm1/madrasetna/images/logo-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/elnigm1/madrasetna/images/logo-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/elnigm1/madrasetna/images/logo-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/elnigm1/madrasetna/images/screenshot.png",
+      "sizes": "1080x1920",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["education", "learning"],
+  "shortcuts": [
+    {
+      "name": "الدورات المجانية",
+      "short_name": "الدورات",
+      "description": "جميع الدورات التعليمية المجانية",
+      "url": "/elnigm1/madrasetna/#courses",
+      "icons": [
+        {
+          "src": "/elnigm1/madrasetna/images/logo-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "المهندس محمد عصام",
+      "short_name": "المهندس",
+      "description": "معلومات عن مؤسس المنصة",
+      "url": "/elnigm1/madrasetna/#engineer",
+      "icons": [
+        {
+          "src": "/elnigm1/madrasetna/images/logo-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ]
+}
