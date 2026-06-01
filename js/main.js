@@ -291,6 +291,17 @@ async function askMyAIChatbot(textFromUser) {
 
 
 
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/elnigm1/sw.js') // تأكد أن المسار يشير إلى المستودع مباشرة بدون مجلد madrasetna
+      .then((reg) => {
+        console.log('تم تسجيل الـ Service Worker بنجاح منصة الراسخون:', reg.scope);
+      })
+      .catch((err) => {
+        console.error('فشل تسجيل الـ Service Worker:', err);
+      });
+  });
+}
 
 
 
