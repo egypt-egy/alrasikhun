@@ -14,12 +14,10 @@
 
     <meta name="google-site-verification" content="sxeBxHUI1lqhQKOD1vaWHSBIj7QEQKQOsHEGKih1sEY" />
 
-    <!-- تحديث رابط الأرشفة للمستودع الفعلي الصحيح -->
     <link rel="canonical" href="https://egypt-egy.github.io/alrasikhun/">
     <link rel="sitemap" type="application/xml" href="sitemap.xml">
     <link rel="robots" href="robots.txt" type="text/plain">
 
-    <!-- روابط مواقع التواصل المحدثة بالدومين الصحيح حروف صغيرة -->
     <meta property="og:title" content="منصة الراسخون في العلم | نحو مجتمع مصري متعلم">
     <meta property="og:description" content="منصة تعليمية مجانية تهدف لمحو الجهل ونشر العلم النافع لجميع فئات الشعب المصري. مبادرة من أجل مصر.">
     <meta property="og:image" content="https://egypt-egy.github.io/alrasikhun/images/logo.png">
@@ -29,7 +27,7 @@
     <meta property="og:site_name" content="منصة الراسخون في العلم">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="منصة الراسخون في العلم | 教育 المجاني في مصر">
+    <meta name="twitter:title" content="منصة الراسخون في العلم | التعليم المجاني في مصر">
     <meta name="twitter:description" content="نحو جيل راسخ في العلم ومحرر من الجهل - مبادرة تعليمية شاملة">
     <meta name="twitter:image" content="https://egypt-egy.github.io/alrasikhun/images/logo.png">
 
@@ -148,16 +146,12 @@
     </div>
 </div>
 
-<!-- سكشن الـ Hero المحدث - تم تعديل روابط ومسارات الفيديو للحروف الصغيرة والمسار الاحتياطي النسبي المباشر -->
 <section class="hero" style="position: relative; background: radial-gradient(circle at 50% 30%, #0d1b2a 0%, #010811 100%); color: #ffffff; padding: 100px 0 80px 0; overflow: hidden;">
     
-    <video id="heroVideo" muted playsinline autoplay loop style="position: absolute; top: 50%; left: 50%; width: 100%; height: 100%; object-fit: cover; transform: translate(-50%, -50%); z-index: 1; transition: opacity 1s ease-in-out;">
-        <!-- الرابط الأساسي بحروف صغيرة تماماً لمنع خطأ الـ 404 على جيت هاب -->
-        <source src="https://egypt-egy.github.io/alrasikhun/Video/background.mp4" type="video/mp4">
-        <!-- رابط احتياطي في حال كان مجلد الفيديو بحروف صغيرة video -->
+    <!-- ✅ تم تصحيح مسار الفيديو: video بحرف صغير -->
+    <video id="heroVideo" muted playsinline autoplay loop style="position: absolute; top: 50%; left: 50%; width: 100%; height: 100%; object-fit: cover; transform: translate(-50%, -50%); z-index: 1;">
         <source src="https://egypt-egy.github.io/alrasikhun/video/background.mp4" type="video/mp4">
-        <!-- رابط احتياطي محلي نسبي مباشر -->
-        <source src="./Video/background.mp4" type="video/mp4">
+        <source src="./video/background.mp4" type="video/mp4">
     </video>
 
     <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(rgba(1, 8, 17, 0.75), rgba(13, 27, 42, 0.85)); z-index: 2; pointer-events: none;"></div>
@@ -177,7 +171,7 @@
             
             <div class="egypt-flag">
                 <span class="flag-red"></span>
-                <span class="flag-white" ></span>
+                <span class="flag-white"></span>
                 <span class="flag-black"></span>
                 <span class="flag-eagle"><img src="images/eagle.png" alt=""></span>
             </div>
@@ -434,7 +428,7 @@
     height: 55px;
     border-radius: 4px;
     object-fit: cover;
-    border: 1px solid #fff ;
+    border: 1px solid #fff;
     box-shadow: 0 0 12px rgba(212, 175, 55, 0.25);
     transition: all 0.3s ease;
 }
@@ -562,36 +556,22 @@
 }
 </style>
 
+<!-- ✅ سكريبت مُصلح: الفيديو يشتغل تلقائي بدون انقطاع -->
 <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
     const video = document.getElementById('heroVideo');
-    const waitTime = 4000; 
-
     video.playbackRate = 0.6;
-
-    video.addEventListener('play', function() {
-        video.playbackRate = 0.6;
-    });
-
-    video.addEventListener('ended', function() {
-        video.style.opacity = '0';
-        setTimeout(() => {
-            video.currentTime = 0;
-            video.play().catch(err => console.log("Video autoplay blocked or error: ", err));
-            video.style.opacity = '1';
-        }, waitTime);
-    });
 </script>
 
 <a href="history-egyptoin.html" class="floating-btn new-history-btn">
     <i class="fas fa-landmark"></i> 
-    <span>مصر للمصريين<br>مصر ليست كوشية </span>
+    <span>مصر للمصريين<br>مصر ليست كوشية</span>
 </a>
 
 <a href="tester.html" class="floating-btn">
     <i class="fas fa-brain"></i> 
-    <span>أختبر ذكاءك </span>
+    <span>أختبر ذكاءك</span>
 </a>
 
     <script src="js/main.js"></script>
