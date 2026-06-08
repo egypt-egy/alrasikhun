@@ -1,33 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://elnigm0.github.io/elnigm1/index.html</loc>
-    <lastmod>2026-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://elnigm0.github.io/elnigm1/kids.html</loc>
-    <lastmod>2026-03-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://elnigm0.github.io/elnigm1/tech.html</loc>
-    <lastmod>2026-03-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://elnigm0.github.io/elnigm1/sociology.html</loc>
-    <lastmod>2026-03-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://elnigm0.github.io/elnigm1/literature-islam.html</loc>
-    <lastmod>2026-03-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
+    <!-- الصفحة الرئيسية -->
+    <url>
+        <loc>https://alrasikhun.netlify.app/</loc>
+        <lastmod>2026-06-08</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <!-- صفحة الأساسيات -->
+    <url>
+        <loc>https://alrasikhun.netlify.app/kids.html</loc>
+        <lastmod>2026-06-08</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <!-- صفحة التكنولوجيا -->
+    <url>
+        <loc>https://alrasikhun.netlify.app/tech.html</loc>
+        <lastmod>2026-06-08</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <!-- صفحة علم الاجتماع -->
+    <url>
+        <loc>https://alrasikhun.netlify.app/sociology.html</loc>
+        <lastmod>2026-06-08</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <!-- صفحة الأدب والقيم الإسلامية -->
+    <url>
+        <loc>https://alrasikhun.netlify.app/literature-islam.html</loc>
+        <lastmod>2026-06-08</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
 </urlset>
