@@ -1,10 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /admin/
-Disallow: /private/
 
-Sitemap: https://elnigm0.github.io/elnigm1/sitemap.xml
-
-# تحسين SEO
-Host: https://elnigm0.github.io
-Crawl-delay: 2
+Sitemap: https://alrasikhun.netlify.app/sitemap.xml
