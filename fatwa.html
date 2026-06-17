@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بوابة الفتاوى الشرعية | منصة الراسخون في العلم</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==========================================
+           تنسيق واجهة الفتاوى المبتكرة (بدون كروت)
+        ============================================ */
+        :root {
+            --primary-dark: #12221a;
+            --emerald-green: #1e3a2f;
+            --gold-accent: #b8860b;
+            --whatsapp-color: #25d366;
+            --link-blue: #2b6cb0;
+            --bg-smooth: #fdfbf7;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--bg-smooth);
+            color: #2d3748;
+            line-height: 1.8;
+            direction: rtl;
+            padding: 2rem 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* زر الرجوع الانسيابي للأقسام */
+        .back-navigation {
+            margin-bottom: 3rem;
+        }
+
+        .back-action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #ffffff;
+            color: var(--emerald-green);
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 12px rgba(30, 58, 47, 0.05);
+            border: 1px solid rgba(30, 58, 47, 0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .back-action-btn:hover {
+            background-color: var(--emerald-green);
+            color: #ffffff;
+            transform: translateX(4px);
+            box-shadow: 0 8px 20px rgba(30, 58, 47, 0.15);
+        }
+
+        /* مقدمة القسم الروحانية المنسقة */
+        .fatwa-intro {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .fatwa-intro h1 {
+            font-family: 'Amiri', serif;
+            color: var(--emerald-green);
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .fatwa-intro p {
+            font-size: 1.15rem;
+            color: #4a5568;
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 500;
+        }
+
+        /* المسار الخطي المبتكر بديل الكروت (Timeline Flow) */
+        .fatwa-stream {
+            position: relative;
+            padding-right: 35px;
+            border-right: 3px dashed rgba(30, 58, 47, 0.15);
+            margin-bottom: 4rem;
+        }
+
+        .stream-node {
+            position: relative;
+            margin-bottom: 3.5rem;
+        }
+
+        /* النقطة المضيئة على الخط */
+        .stream-node::before {
+            content: '';
+            position: absolute;
+            right: -42px;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            background-color: var(--gold-accent);
+            border: 3px solid #ffffff;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(184, 134, 11, 0.2);
+            z-index: 2;
+        }
+
+        .node-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 1rem;
+        }
+
+        .node-icon {
+            font-size: 1.4rem;
+            color: var(--emerald-green);
+        }
+
+        .node-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+
+        .node-desc {
+            color: #64748b;
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+
+        /* مجموعة روابط الاتصال السريعة والحديثة inline */
+        .action-links-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .direct-action-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none !important;
+            padding: 8px 18px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: all 0.25s ease;
+        }
+
+        /* لون روابط المواقع الرسمية */
+        .link-web {
+            background-color: rgba(43, 108, 176, 0.06);
+            color: var(--link-blue);
+            border: 1px solid rgba(43, 108, 176, 0.15);
+        }
+
+        .link-web:hover {
+            background-color: var(--link-blue);
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(43, 108, 176, 0.2);
+        }
+
+        /* لون روابط الواتساب */
+        .link-whatsapp {
+            background-color: rgba(37, 211, 102, 0.06);
+            color: #1ed760;
+            border: 1px solid rgba(37, 211, 102, 0.15);
+        }
+
+        .link-whatsapp:hover {
+            background-color: var(--whatsapp-color);
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
+        }
+
+        /* تنويه الأمان الشرعي أسفل الصفحة */
+        .sharia-notice {
+            background-color: #ffffff;
+            border-left: 4px solid var(--gold-accent);
+            border-right: 4px solid var(--gold-accent);
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+
+        .sharia-notice i {
+            color: var(--gold-accent);
+            margin-left: 8px;
+        }
+
+        /* شاشات الموبايل */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem 0;
+            }
+            .fatwa-intro h1 {
+                font-size: 1.7rem;
+            }
+            .fatwa-intro p {
+                font-size: 1rem;
+            }
+            .fatwa-stream {
+                padding-right: 25px;
+            }
+            .stream-node::before {
+                right: -31px;
+            }
+            .node-title {
+                font-size: 1.2rem;
+            }
+            .direct-action-link {
+                width: 100%; /* الروابط تحت بعضها على الموبايل لسهولة الضغط */
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="back-navigation">
+            <a href="../literature-islam.html" class="back-action-btn">
+                <i class="fas fa-arrow-right"></i>
+                <span>العودة لصفحة الأقسام</span>
+            </a>
+        </div>
+
+        <div class="fatwa-intro">
+            <h1><i class="fas fa-balance-scale"></i> الفتاوى الشرعية ومظانّها المعتمدة</h1>
+            <p>امتثالاً لأمر الله تعالى "فَاسْأَلُوا أَهْلَ الذِّكْرِ إِن كُنتُمْ لَا تَعْلَمُونَ"، نضع بين أيديكم قنوات التواصل المباشرة والمنصات الرسمية لأعرق دور الإفتاء في العالم الإسلامي للحصول على الفتوى من مصادرها النقية.</p>
+        </div>
+
+        <div class="fatwa-stream">
+            
+            <div class="stream-node">
+                <div class="node-header">
+                    <i class="fas fa-landmark-dome node-icon"></i>
+                    <h2 class="node-title">دار الإفتاء المصرية</h2>
+                </div>
+                <p class="node-desc">مؤسسة إسلامية عريقة متخصصة في إرساء الفتاوى الشرعية المنضبطة القائمة على التيسير ومواكبة النوازل العصرية عبر نخبة من كبار علماء الأزهر الشريف.</p>
+                <div class="action-links-group">
+                    <a href="https://www.dar-alifta.org" target="_blank" class="direct-action-link link-web">
+                        <i class="fas fa-globe"></i> زيارة الموقع الإلكتروني
+                    </a>
+                    <a href="https://wa.me/201144410134" target="_blank" class="direct-action-link link-whatsapp">
+                        <i class="fab fa-whatsapp"></i> خدمة فتاوى واتساب الرسمية
+                    </a>
+                </div>
+            </div>
+
+            <div class="stream-node">
+                <div class="node-header">
+                    <i class="fas fa-kaaba node-icon"></i>
+                    <h2 class="node-title">دار الإفتاء بالمملكة العربية السعودية</h2>
+                </div>
+                <p class="node-desc">المنصة الرسمية لإصدار الفتاوى الشرعية والبحوث العلمية بالمملكة العربية السعودية، والممثلة في هيئة كبار العلماء لمساعدتكم في كافة المسائل العقدية والفقهية.</p>
+                <div class="action-links-group">
+                    <a href="https://www.alifta.gov.sa" target="_blank" class="direct-action-link link-web">
+                        <i class="fas fa-globe"></i> البوابة الإلكترونية الرسمية
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="sharia-notice">
+            <p><i class="fas fa-info-circle"></i> <strong>تنويه بريء للذمة:</strong> منصة الراسخون في العلم لا تصدر أي فتاوى شرعية مستقلة، وهدف هذا القسم هو توجيهكم مباشرة إلى الجهات الرسمية المنوط بها الفتوى لحفظ دينكم وعقيدتكم.</p>
+        </div>
+
+    </div>
+
+</body>
+</html>

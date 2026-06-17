@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>مكتبة القصص الإسلامية المرئية | منصة الراسخون في العلم</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==========================================
+           تنسيقات منصة القصص المحدثة والمتجاوبة تماماً
+        ============================================ */
+        *, *::before, *::after {
+            box-sizing: border-box; /* تضمن عدم خروج أي عنصر أو فيديو برة حدود الشاشة */
+        }
+
+        :root {
+            --primary-color: #1e3a2f;
+            --accent-gold: #b8860b;
+            --text-dark: #2d3748;
+            --bg-light: #fefaf5;
+            --tab-bg-active: #1e3a2f;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            direction: rtl;
+            padding: 1.5rem 0;
+            overflow-x: hidden; /* منع التمرير الأفقي تماماً في الموبايل */
+        }
+
+        .container {
+            width: 100%;
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* زر الرجوع الذكي */
+        .back-nav {
+            margin-bottom: 1.5rem;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #ffffff;
+            color: var(--primary-color);
+            text-decoration: none;
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(30, 58, 47, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            border-color: var(--primary-color);
+        }
+
+        .back-btn i {
+            transition: transform 0.3s ease;
+        }
+
+        .back-btn:hover i {
+            transform: translateX(5px);
+        }
+
+        /* شريط التبويب الذكي للتنقل بالجافا سكريبت (Tabs) */
+        .navigation-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #e8dcc8;
+            padding-bottom: 10px;
+        }
+
+        .tab-trigger {
+            flex: 1 1 calc(50% - 8px); /* توزيع متساوي على الموبايل (زرين في الصف) */
+            background-color: #ffffff;
+            color: var(--primary-color);
+            border: 1px solid rgba(30, 58, 47, 0.15);
+            padding: 10px 12px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'Cairo', sans-serif;
+            text-align: center;
+            transition: all 0.25s ease;
+        }
+
+        .tab-trigger:hover {
+            background-color: rgba(30, 58, 47, 0.05);
+        }
+
+        .tab-trigger.active {
+            background-color: var(--tab-bg-active);
+            color: #ffffff;
+            border-color: var(--tab-bg-active);
+        }
+
+        /* حاويات محتوى الأقسام */
+        .stories-panel {
+            display: none;
+        }
+
+        .stories-panel.active {
+            display: block;
+        }
+
+        /* شبكة الفيديوهات (مرنة للموبايل والكمبيوتر) */
+        .video-playlist-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* افتراضي للموبايل: فيديو واحد مفرود بالكامل في الصف */
+            gap: 1.5rem;
+        }
+
+        /* كارت الفيديو المربع النظيف */
+        .video-item-box {
+            background: #ffffff;
+            padding: 1rem;
+            box-shadow: 0 6px 18px rgba(30, 58, 47, 0.04);
+            border-top: 3px solid var(--primary-color);
+            width: 100%;
+        }
+
+        .panel-secondary .video-item-box {
+            border-top-color: var(--accent-gold);
+        }
+
+        /* عنوان خفيف ولطيف فوق الفيديو بدون زخارف */
+        .video-card-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.8rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+        }
+
+        /* حاوية الفيديو المربعة تماماً وبدون حواف متجاوبة 100% */
+        .video-frame-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* نسبة أبعاد الشاشة 16:9 */
+            height: 0;
+            background-color: #000000;
+        }
+
+        .video-frame-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* ==========================================
+           شاشات التابلت والكمبيوتر (Media Queries)
+        ============================================ */
+        @media (min-width: 600px) {
+            .tab-trigger {
+                flex: unset; /* إلغاء التمدد الإجباري على الشاشات الأكبر */
+                padding: 10px 20px;
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            body {
+                padding: 2rem 0;
+            }
+            .video-playlist-grid {
+                grid-template-columns: repeat(2, 1fr); /* فيديوين بجانب بعض بدقة تامة في الشاشات الكبيرة */
+                gap: 2rem;
+            }
+            .video-card-title {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="back-nav">
+            <a href="../literature-islam.html" class="back-btn">
+                <i class="fas fa-arrow-right"></i>
+                <span>العودة للأقسام السابقة</span>
+            </a>
+        </div>
+
+        <div class="navigation-tabs">
+            <button class="tab-trigger active" onclick="switchSection(event, 'creation-prophets')">بداية الخلق والأنبياء</button>
+            <button class="tab-trigger" onclick="switchSection(event, 'prophet-companions')">السيرة النبوية والصحابة</button>
+            <button class="tab-trigger" onclick="switchSection(event, 'scholars-history')">علماء وأحداث تاريخية</button>
+            <button class="tab-trigger" onclick="switchSection(event, 'end-times')">علامات الساعة والآخرة</button>
+        </div>
+
+        <div id="creation-prophets" class="stories-panel active">
+            <div class="video-playlist-grid">
+                
+                <div class="video-item-box">
+                    <h2 class="video-card-title">قصة خلق آدم عليه السلام</h2>
+                    <div class="video-frame-container">
+                        <iframe src="https://www.youtube.com/embed/HiMpqS5pVBA" title="قصة آدم" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="video-item-box">
+                    <h2 class="video-card-title">قصة إدريس عليه السلام</h2>
+                    <div class="video-frame-container">
+                        <iframe src="https://www.youtube.com/embed/b8qeZdI_lcU" title="قصة ادريس" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="video-item-box">
+                    <h2 class="video-card-title">قصة نوح عليه السلام والطوفان</h2>
+                    <div class="video-frame-container">
+                        <iframe src="https://www.youtube.com/embed/kCIHQCRqW1o" title="قصة نوح" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="video-item-box">
+                    <h2 class="video-card-title">قصة قوم عاد وهلاكهم</h2>
+                    <div class="video-frame-container">
+                        <iframe src="https://www.youtube.com/embed/XIQ7WiPSmzk" title="قصة قوم عاد" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="video-item-box">
+                    <h2 class="video-card-title">قصة قوم صالح عليه السلام</h2>
+                    <div class="video-frame-container">
+                        <iframe src="https://www.youtube.com/embed/ZRml8paM66w" title="قصة قوم صالح" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="video-item-box">
+                    <h2 class="video-card-title">قصة إبراهيم خليل الله عليه السلام</h2>
+                    <div class="video-frame-container">
+                        <iframe src="https://www.youtube.com/embed/pN4t12g56FA" title="قصة إبراهيم" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="video-item-box">
+                    <h2 class="video-card-title">قصة لوط عليه السلام وقومه</h2>
+                    <div class="video-frame-container">
+                        <iframe src="https://www.youtube.com/embed/nQnC8Yhr1_4" title="قصة لوط" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="video-item-box">
+                    <h2 class="video-card-title">قصة يوسف الصديق عليه السلام الكاملة</h2>
+                    <div class="video-frame-container">
+                        <iframe src="https://www.youtube.com/embed/5qy8EfkL-cE" title="قصة يوسف" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="video-item-box">
+                    <h2 class="video-card-title">قصة كليم الله موسى عليه السلام</h2>
+                    <div class="video-frame-container">
+                        <iframe src="https://www.youtube.com/embed/fJGV2FL1j54" title="قصة موسى" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="video-item-box">
+                    <h2 class="video-card-title">قصة الملك داود وضد جالوت</h2>
+                    <div class="video-frame-container">
+                        <iframe src="https://www.youtube.com/embed/WtEQF9_1cBg" title="داود ضد جالوت" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="video-item-box">
+                    <h2 class="video-card-title">قصة سليمان عليه السلام والملك العظيم</h2>
+                    <div class="video-frame-container">
+                        <iframe src="https://www.youtube.com/embed/XOoLTgZsKE4" title="قصة سليمان" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="video-item-box">
+                    <h2 class="video-card-title">قصة عيسى بن مريم عليه السلام المعجزة</h2>
+                    <div class="video-frame-container">
+                        <iframe src="https://www.youtube.com/embed/4cxCcYlJXbY" title="قصة عيسى" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="prophet-companions" class="stories-panel panel-secondary">
+            <div class="video-playlist-grid">
+                
+                <div class="video-item-box">
+                    <h2 class="video-card-title">ولادة المخلوق الأعظم النبي ﷺ</h2>
+                    <div class="video-frame-container">
+                        <iframe src="https://www.youtube.com/embed/RS9uS_U0f6M" title="ولادة المخلوق الاعظم" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="video-item-box">
+                    <h2 class="video-card-title">سيف الله المسلول خالد بن الوليد</h2>
+                    <div class="video-frame-container">
+                        <iframe src="https://www.youtube.com/embed/LmGPCwF8erQ" title="قصة خالد بن الوليد" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="scholars-history" class="stories-panel">
+            <div class="video-playlist-grid">
+                
+                <div class="video-item-box">
+                    <h2 class="video-card-title">قصة محاولة هدم الكعبة المشرفة</h2>
+                    <div class="video-frame-container">
+                        <iframe src="https://www.youtube.com/embed/mVVkSoolXY0" title="محاولة هدم الكعبه" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="video-item-box">
+                    <h2 class="video-card-title">قصة الملك العادل ذو القرنين</h2>
+                    <div class="video-frame-container">
+                        <iframe src="https://www.youtube.com/embed/sscOuClY8nc" title="قصة ذو القرنين" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="video-item-box">
+                    <h2 class="video-card-title">قصة أصحاب الكهف العجيبة</h2>
+                    <div class="video-frame-container">
+                        <iframe src="https://www.youtube.com/embed/j-PM8p9MdWg" title="قصة أصحاب الكهف" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="video-item-box">
+                    <h2 class="video-card-title">سيرة أمير المؤمنين في الحديث الإمام البخاري</h2>
+                    <div class="video-frame-container">
+                        <iframe src="https://www.youtube.com/embed/vCfgEKUKliI" title="البخاري" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="video-item-box">
+                    <h2 class="video-card-title">سيرة شيخ الإسلام ابن تيمية</h2>
+                    <div class="video-frame-container">
+                        <iframe src="https://www.youtube.com/embed/2xx_MUU843c" title="بن تيمية" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="end-times" class="stories-panel panel-secondary">
+            <div class="video-playlist-grid">
+                
+                <div class="video-item-box">
+                    <h2 class="video-card-title">أسرار وحقائق جزيرة المسيح الدجال</h2>
+                    <div class="video-frame-container">
+                        <iframe src="https://www.youtube.com/embed/oZqwlwgApqQ" title="جزيرة الدجال" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="video-item-box">
+                    <h2 class="video-card-title">علامات الساعة الكبرى والترتيب العجيب</h2>
+                    <div class="video-frame-container">
+                        <iframe src="https://www.youtube.com/embed/5WrAcGtMRpU" title="علامات الساعة الكبرى" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="video-item-box">
+                    <h2 class="video-card-title">أحداث يوم القيامة العظيم بنبوءة نبي</h2>
+                    <div class="video-frame-container">
+                        <iframe src="https://www.youtube.com/embed/AdNXWxGtRWY" title="يوم القيامة نبوءة نبي" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="video-item-box">
+                    <h2 class="video-card-title">خطبة إبليس المخزية يوم القيامة في النار</h2>
+                    <div class="video-frame-container">
+                        <iframe src="https://www.youtube.com/embed/OMThOKMvhKQ" title="خطبة ابليس يوم القيامة" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="video-item-box">
+                    <h2 class="video-card-title">حياتنا الخالدة والنعيم المقيم في الجنة</h2>
+                    <div class="video-frame-container">
+                        <iframe src="https://www.youtube.com/embed/I7VZLTXJZlA" title="حياتنا في الجنة" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function switchSection(event, sectionId) {
+            const panels = document.querySelectorAll('.stories-panel');
+            panels.forEach(panel => panel.classList.remove('active'));
+
+            const tabs = document.querySelectorAll('.tab-trigger');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            document.getElementById(sectionId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>

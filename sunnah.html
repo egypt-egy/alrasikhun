@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>حجية السنة النبوية وحكم اليوجا | منصة الراسخون في العلم</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==========================================
+           تنسيقات قسم السنة النبوية المتجاوبة تماماً
+        ============================================ */
+        *, *::before, *::after {
+            box-sizing: border-box; /* حماية كاملة للشاشات من خروج العناصر */
+        }
+
+        :root {
+            --primary-color: #1e3a2f;
+            --accent-gold: #b8860b;
+            --text-dark: #2d3748;
+            --bg-light: #fdfbf7;
+            --card-shadow: 0 8px 24px rgba(30, 58, 47, 0.04);
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.7;
+            direction: rtl;
+            padding: 1.5rem 0;
+            overflow-x: hidden; /* منع أي تمرير أفقي على الموبايلات نهائياً */
+        }
+
+        .container {
+            width: 100%;
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* زر العودة للأقسام السابقة */
+        .back-nav {
+            margin-bottom: 2rem;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #ffffff;
+            color: var(--primary-color);
+            text-decoration: none;
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(30, 58, 47, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            border-color: var(--primary-color);
+        }
+
+        .back-btn i {
+            transition: transform 0.3s ease;
+        }
+
+        .back-btn:hover i {
+            transform: translateX(5px);
+        }
+
+        /* كارت المحتوى الهيكلي المربع تماماً وبدون حواف دائرية */
+        .content-card {
+            background: #ffffff;
+            padding: 2rem;
+            box-shadow: var(--card-shadow);
+            border-right: 5px solid var(--primary-color);
+            margin-bottom: 2rem;
+            width: 100%;
+        }
+
+        /* تفاصيل البيان الشرعي الفوري المباشر */
+        .topic-summary {
+            font-size: 1.15rem;
+            color: #3d4a41;
+            text-align: justify;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+
+        /* عنوان الفيديو النظيف بدون أي زخارف مشتتة */
+        .video-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e8dcc8;
+        }
+
+        /* مشغل فيديو يوتيوب المربع تماماً والمتجاوب 100% مع الشاشات والموبايل */
+        .video-box-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* نسبة أبعاد 16:9 القياسية للمشغل */
+            height: 0;
+            background-color: #000000;
+        }
+
+        .video-box-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none; /* مربع خالص وبدون أي إطارات ملونة أو دائرية */
+        }
+
+        /* نص التنبيه العقدي أسفل الكارت */
+        .doctrinal-alert {
+            margin-top: 2rem;
+            background-color: rgba(184, 134, 11, 0.05);
+            border: 1px solid rgba(184, 134, 11, 0.15);
+            padding: 1rem 1.5rem;
+            font-size: 0.95rem;
+            color: #5c4308;
+            font-weight: 600;
+        }
+
+        /* شاشات الكومبيوتر والتابلت الكبيرة */
+        @media (min-width: 768px) {
+            body {
+                padding: 2.5rem 0;
+            }
+            .content-card {
+                padding: 3rem;
+            }
+            .video-title {
+                font-size: 1.35rem;
+            }
+        }
+
+        /* شاشات الموبايل الصغيرة جداً */
+        @media (max-width: 480px) {
+            .content-card {
+                padding: 1.2rem;
+            }
+            .topic-summary {
+                font-size: 1.05rem;
+                line-height: 1.6;
+            }
+            .video-title {
+                font-size: 1.15rem;
+            }
+            .back-btn {
+                padding: 8px 18px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="back-nav">
+            <a href="../literature-islam.html" class="back-btn">
+                <i class="fas fa-arrow-right"></i>
+                <span>العودة للأقسام السابقة</span>
+            </a>
+        </div>
+
+        <div class="content-card">
+            
+            <p class="topic-summary">
+                تعتبر السنة النبوية المطهرة هي المصدر الثاني من مصادر التشريع الإسلامي، والبيان التطبيقي والعملي لما جاء في القرآن الكريم. ومن خلال هذا المنطلق المعتمد على حفظ العقيدة الإسلامية ونقائها من الشوائب، نستعرض في هذا القسم بياناً شرعياً هاماً حول مسألة "اليوجا"، وتوضيح حقيقتها بأنها تمثل في أصلها طقساً تعبدياً وثنياً ينتمي لغير دين الله وليست مجرد رياضة بدنية كما يُشاع، مما يستوجب على المسلم الحذر منها صيانةً لتوحيده وعبادته.
+            </p>
+            
+            <h2 class="video-title">فيديو حجية السنة النبوية وحكم ممارسة اليوجا</h2>
+            
+            <div class="video-box-wrapper">
+                <iframe src="https://www.youtube.com/embed/CThzdwjlIdo" title="فيديو حجية السنة وتحريم اليوجا" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+
+            <div class="doctrinal-alert">
+                <i class="fas fa-exclamation-triangle"></i> تذكر دائماً: سلامة العقيدة وحفظ التوحيد مقدّم على كل شهوات النفس ومحدثات العصر؛ والرياضة في الإسلام مباحة ما لم تختلط بشعائر دينية تعبدية لغير الله تبارك وتعالى.
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
