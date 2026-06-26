@@ -3,187 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-        
     <title>التكنولوجيا والوعي الرقمي | منصة الراسخون في العلم</title>
-    <meta name="description" content="تعلم أساسيات تكنولوجيا المعلومات مع منصة الراسخون في العلم. دروس مبسطة تهدف لمحور الأمية الرقمية وتمكينك من أدوات العصر الحديث مجاناً.">
-    <meta name="keywords" content="الراسخون في العلم, تكنولوجيا المعلومات, الوعي الرقمي, أساسيات الكمبيوتر, التعليم المجاني، المهندس محمد عصام">
     
+    <meta name="description" content="تعلم أساسيات تكنولوجيا المعلومات مع منصة الراسخون في العلم. دروس مبسطة تهدف لمحو الأمية الرقمية.">
+    <meta name="keywords" content="الراسخون في العلم, تكنولوجيا المعلومات, الوعي الرقمي, أساسيات الكمبيوتر, المهندس محمد عصام">
     <meta name="author" content="المهندس محمد عصام - منصة الراسخون في العلم">
     <meta name="copyright" content="© 2026 منصة الراسخون في العلم">
     
-    <meta name="robots" content="index, follow, max-image-preview:large">
-    <meta name="googlebot" content="index, follow">
-    
-    <link rel="canonical" href="https://elnigm0.github.io/elnigm1/">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="images/logo.png" type="image/png">
-    
-    <style>
-        /* تنسيقات خاصة بصفحة التكنولوجيا - هوية الراسخون الرقمية */
-        .tech-header {
-            background: linear-gradient(135deg, #2c3e50, #1a4d6b); /* ألوان تقنية رسمية */
-            padding: 3rem 0;
-            text-align: center;
-            color: white;
-            position: relative;
-        }
-        
-        .tech-header::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(to right, #3498db, #2ecc71);
-        }
-        
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: white;
-            text-decoration: none;
-            margin-bottom: 1.5rem;
-            font-weight: 500;
-            background: rgba(255,255,255,0.1);
-            padding: 0.5rem 1.2rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            transition: all 0.3s;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-        
-        .back-link:hover {
-            background: rgba(255,255,255,0.2);
-            transform: translateX(5px);
-        }
-        
-        .tech-header h1 {
-            font-size: 2.2rem;
-            margin-bottom: 0.5rem;
-            font-family: 'Cairo', sans-serif;
-            font-weight: 800;
-        }
-        
-        .tech-header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            margin-bottom: 1.5rem;
-        }
-        
-        .playlist-info {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: #3498db;
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
-        }
-        
-        .playlist-section {
-            padding: 4rem 0;
-            background: #f4f7f6;
-        }
-        
-        .playlist-container {
-            max-width: 950px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 30px;
-            overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
-            border: 1px solid #e0e0e0;
-        }
-        
-        .playlist-header {
-            background: #1a1a1a;
-            color: white;
-            padding: 1.5rem 2rem;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .playlist-header i {
-            font-size: 2rem;
-            color: #2ecc71;
-        }
-        
-        .playlist-header h3 {
-            margin: 0;
-            font-size: 1.2rem;
-            font-weight: 700;
-        }
-        
-        .video-player {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            background: #000;
-        }
-        
-        .video-player iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        
-        .playlist-footer {
-            background: #fdfdfd;
-            padding: 1.2rem;
-            text-align: center;
-            border-top: 1px solid #eee;
-            font-size: 0.9rem;
-            color: #555;
-            font-weight: 500;
-        }
-        
-        .info-box {
-            background: white;
-            border-right: 5px solid #2ecc71;
-            padding: 1.5rem;
-            margin-top: 3rem;
-            border-radius: 20px;
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
-        }
-        
-        .info-box i {
-            font-size: 1.5rem;
-            color: #2ecc71;
-            margin-top: 3px;
-        }
-        
-        .info-box p {
-            margin: 0;
-            line-height: 1.7;
-            color: #333;
-        }
-
-        @media (max-width: 768px) {
-            .tech-header h1 { font-size: 1.6rem; }
-            .tech-header p { font-size: 0.95rem; }
-            .playlist-header h3 { font-size: 1rem; }
-            .info-box { flex-direction: column; text-align: center; }
-            .info-box i { margin: 0 auto; }
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/tech.css">
 </head>
 <body>
 
@@ -195,502 +30,309 @@
                     <span class="logo-text">الراسخون <span class="logo-highlight">في العلم</span></span>
                 </a>
             </div>
+
+            <div class="ai-icon-trigger" id="open-ai-btn" title="اسأل الذكاء الاصطناعي">
+                <i class="fas fa-robot"></i>
+                <span class="ai-badge">AI</span>
+            </div>
+
             <ul class="nav-links">
-                <li><a href="index.html">الرئيسية</a></li>
-                <li><a href="kids.html"><i class="fas fa-graduation-cap"></i> الأساسيات</a></li>
-                <li><a href="tech.html" class="active"><i class="fas fa-microchip"></i> التكنولوجيا</a></li>
+                <li><a href="index.html" class="active">الرئيسية</a></li>
+                <li><a href="kids.html"><i class="fas fa-book-open"></i> الأساسيات</a></li>
+                <li><a href="tech.html"><i class="fas fa-microchip"></i> التكنولوجيا</a></li>
                 <li><a href="sociology.html"><i class="fas fa-users"></i> علم الاجتماع</a></li>
-                <li><a href="literature-islam.html"><i class="fas fa-mosque"></i> الأدب والإسلام</a></li>
+                <li><a href="literature-islam.html"><i class="fas fa-mosque"></i> القيم والأدب</a></li>
             </ul>
+            
             <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
     </nav>
 
-<section class="tech-header">
-    <div class="container">
-
-        <a href="index.html" class="back-link">
-            <i class="fas fa-arrow-right"></i>
-            العودة للرئيسية
-        </a>
-
-        <h1>
-            <i class="fas fa-display"></i>
-            مسار الوعي التقني
-        </h1>
-
-        <p>
-            لأن الراسخ في العلم لا يجهل أدوات عصره.. ابدأ رحلتك في عالم التكنولوجيا
-        </p>
-
-        <div class="playlist-info">
-            <i class="fas fa-graduation-cap"></i>
-
-            <a href="https://maharatech.gov.eg/" 
-               target="_blank"
-               rel="noopener noreferrer"
-               class="maharatech-link">
-
-                للدخول لمنصة مهارة تك من هنا (وزارة الاتصالات المصرية)
-
-            </a>
-        </div>
-
-    </div>
-</section>
-
-    <section class="playlist-section">
+    <div class="tabs-wrapper">
         <div class="container">
-            <div class="playlist-container">
-                <div class="playlist-header">
-                    <i class="fas fa-laptop-code"></i>
-                    <div>
-                        <h3>أساسيات تكنولوجيا المعلومات | IT Fundamentals</h3>
-                        <p>رحلة معرفية من الصفر حتى الإتقان</p>
-                    </div>
+            <div class="tabs-list">
+                <button class="tab-trigger active" onclick="switchSection(event, 'sec-internal')">القطع الداخلية</button>
+                <button class="tab-trigger" onclick="switchSection(event, 'sec-storage')">وحدات التخزين</button>
+                <button class="tab-trigger" onclick="switchSection(event, 'sec-input')">أجهزة الإدخال</button>
+                <button class="tab-trigger" onclick="switchSection(event, 'sec-output')">أجهزة الإخراج</button>
+                <button class="tab-trigger" onclick="switchSection(event, 'sec-system')">الأنظمة والبرامج</button>
+            </div>
+        </div>
+    </div>
+
+    <main class="container page-content">
+
+        <section id="sec-internal" class="tab-panel active">
+            <div class="grid-layout">
+                <div class="item-card" onclick="openDetails('motherboard')">
+                    <div class="card-icon-box"><i class="fas fa-microchip"></i></div>
+                    <h3 class="card-title">اللوحة الأم</h3>
+                    <span class="card-slug">Motherboard</span>
                 </div>
-                <div class="video-player">
-                    <iframe 
-                        src="https://www.youtube.com/embed/videoseries?list=PLroS9tRyoUGpBwtwq8NUI85KnOQdVu7v7&rel=0" 
-                        title="YouTube playlist - أساسيات تكنولوجيا المعلومات" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        allowfullscreen>
-                    </iframe>
+                <div class="item-card" onclick="openDetails('cpu')">
+                    <div class="card-icon-box"><i class="fas fa-id-card-alt"></i></div>
+                    <h3 class="card-title">المعالج المركزي</h3>
+                    <span class="card-slug">CPU البروسيسور</span>
                 </div>
-                <div class="playlist-footer">
-                    <i class="fas fa-hand-point-up"></i> نصيحة: انقر على أيقونة (☰) في أعلى يسار الفيديو لمشاهدة جميع حلقات المسار بالترتيب
+                <div class="item-card" onclick="openDetails('ram')">
+                    <div class="card-icon-box"><i class="fas fa-memory"></i></div>
+                    <h3 class="card-title">ذاكرة الرام</h3>
+                    <span class="card-slug">RAM الرامات</span>
+                </div>
+                <div class="item-card" onclick="openDetails('gpu')">
+                    <div class="card-icon-box"><i class="fas fa-vr-cardboard"></i></div>
+                    <h3 class="card-title">كارت الشاشة</h3>
+                    <span class="card-slug">Graphics Card / GPU</span>
+                </div>
+                <div class="item-card" onclick="openDetails('power')">
+                    <div class="card-icon-box"><i class="fas fa-plug"></i></div>
+                    <h3 class="card-title">مزود الطاقة</h3>
+                    <span class="card-slug">Power Supply</span>
+                </div>
+                <div class="item-card" onclick="openDetails('case')">
+                    <div class="card-icon-box"><i class="fas fa-box"></i></div>
+                    <h3 class="card-title">صندوق الكمبيوتر</h3>
+                    <span class="card-slug">Computer Case</span>
                 </div>
             </div>
+        </section>
+
+        <section id="sec-storage" class="tab-panel">
+            <div class="grid-layout">
+                <div class="item-card" onclick="openDetails('hdd')">
+                    <div class="card-icon-box"><i class="fas fa-hdd"></i></div>
+                    <h3 class="card-title">القرص الصلب العادي</h3>
+                    <span class="card-slug">HDD Storage</span>
+                </div>
+                <div class="item-card" onclick="openDetails('ssd')">
+                    <div class="card-icon-box"><i class="fas fa-bolt"></i></div>
+                    <h3 class="card-title">القرص السريع الحديث</h3>
+                    <span class="card-slug">SSD Storage</span>
+                </div>
+                <div class="item-card" onclick="openDetails('usb')">
+                    <div class="card-icon-box"><i class="fas fa-usb"></i></div>
+                    <h3 class="card-title">الفلاشة المحمولة</h3>
+                    <span class="card-slug">USB Flash Memory</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="sec-input" class="tab-panel">
+            <div class="grid-layout">
+                <div class="item-card" onclick="openDetails('keyboard')">
+                    <div class="card-icon-box"><i class="fas fa-keyboard"></i></div>
+                    <h3 class="card-title">لوحة المفاتيح</h3>
+                    <span class="card-slug">Keyboard</span>
+                </div>
+                <div class="item-card" onclick="openDetails('mouse')">
+                    <div class="card-icon-box"><i class="fas fa-mouse-pointer"></i></div>
+                    <h3 class="card-title">الفأرة</h3>
+                    <span class="card-slug">Mouse</span>
+                </div>
+                <div class="item-card" onclick="openDetails('mic')">
+                    <div class="card-icon-box"><i class="fas fa-microphone"></i></div>
+                    <h3 class="card-title">الميكروفون</h3>
+                    <span class="card-slug">Microphone</span>
+                </div>
+                <div class="item-card" onclick="openDetails('cam')">
+                    <div class="card-icon-box"><i class="fas fa-camera"></i></div>
+                    <h3 class="card-title">كاميرا الويب</h3>
+                    <span class="card-slug">Webcam</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="sec-output" class="tab-panel">
+            <div class="grid-layout">
+                <div class="item-card" onclick="openDetails('monitor')">
+                    <div class="card-icon-box"><i class="fas fa-desktop"></i></div>
+                    <h3 class="card-title">الشاشة الرئيسية</h3>
+                    <span class="card-slug">Monitor</span>
+                </div>
+                <div class="item-card" onclick="openDetails('speakers')">
+                    <div class="card-icon-box"><i class="fas fa-volume-up"></i></div>
+                    <h3 class="card-title">السماعات ومكبرات الصوت</h3>
+                    <span class="card-slug">Speakers</span>
+                </div>
+                <div class="item-card" onclick="openDetails('printer')">
+                    <div class="card-icon-box"><i class="fas fa-print"></i></div>
+                    <h3 class="card-title">الطابعة الورقية</h3>
+                    <span class="card-slug">Printer</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="sec-system" class="tab-panel">
+            <div class="grid-layout">
+                <div class="item-card" onclick="openDetails('router')">
+                    <div class="card-icon-box"><i class="fas fa-wifi"></i></div>
+                    <h3 class="card-title">جهاز الراوتر</h3>
+                    <span class="card-slug">Router / الواي فاي</span>
+                </div>
+                <div class="item-card" onclick="openDetails('windows')">
+                    <div class="card-icon-box"><i class="fab fa-windows"></i></div>
+                    <h3 class="card-title">نظام ويندوز</h3>
+                    <span class="card-slug">Windows OS</span>
+                </div>
+                <div class="item-card" onclick="openDetails('linux')">
+                    <div class="card-icon-box"><i class="fab fa-linux"></i></div>
+                    <h3 class="card-title">نظام لينكس</h3>
+                    <span class="card-slug">Linux OS</span>
+                </div>
+                <div class="item-card" onclick="openDetails('macos')">
+                    <div class="card-icon-box"><i class="fab fa-apple"></i></div>
+                    <h3 class="card-title">نظام ماك</h3>
+                    <span class="card-slug">macOS</span>
+                </div>
+                <div class="item-card" onclick="openDetails('browser')">
+                    <div class="card-icon-box"><i class="fas fa-globe"></i></div>
+                    <h3 class="card-title">متصفح الإنترنت</h3>
+                    <span class="card-slug">Web Browser</span>
+                </div>
+                <div class="item-card" onclick="openDetails('antivirus')">
+                    <div class="card-icon-box"><i class="fas fa-shield-halved"></i></div>
+                    <h3 class="card-title">مكافح الفيروسات</h3>
+                    <span class="card-slug">Antivirus Software</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <section class="video-hub-section">
+        <div class="container">
+            <div class="hub-header">
+                <h2>مرئيات ومساقات أنظمة التشغيل العالمية</h2>
+                <p>شروحات حصرية مصممة لبناء مهارات عملية حقيقية في الأنظمة والبرمجيات</p>
+            </div>
             
-            <div class="info-box">
-                <i class="fas fa-shield-halved"></i>
-                <div>
-                    <p><strong>لماذا هذا المسار؟</strong> في منصة <strong>الراسخون في العلم</strong>، نؤمن أن التكنولوجيا هي ذراع العلم المعاصر. هذه المجموعة المختارة (6 دروس مكثفة) تم تصميمها لتأهيلك لفهم كيفية عمل الحاسوب، الإنترنت، وحماية بياناتك، وهي الخطوة الأولى لكل من يريد مواكبة المستقبل.</p>
+            <div class="video-cards-grid">
+                <div class="video-hub-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/OxL0B1F65W8" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>دورة تعلم نظام التشغيل لينكس</h3>
+                        <p>تأسيس برمي ومهاري دقيق في أقوى الأنظمة مفتوحة المصدر لإدارة الخوادم والبرمجيات بثبات وأمان كامل.</p>
+                        <a href="https://youtu.be/OxL0B1F65W8?si=V9zAHLdEcP6comNc" target="_blank" class="watch-external-btn">
+                            <i class="fab fa-youtube"></i> مشاهدة مباشرة عبر يوتيوب
+                        </a>
+                    </div>
+                </div>
+
+                <div class="video-hub-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/57vQcdc7pvw" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>أسرار واحتراف نظام التشغيل ويندوز</h3>
+                        <p>التعرف الشامل على بيئة العمل الأكثر استخداماً في العالم، وإدارة الملفات والخصوصية وكفاءة استخدام الموارد.</p>
+                        <a href="https://youtu.be/57vQcdc7pvw?si=MXlcguOfhMeop-7I" target="_blank" class="watch-external-btn">
+                            <i class="fab fa-youtube"></i> مشاهدة مباشرة عبر يوتيوب
+                        </a>
+                    </div>
+                </div>
+
+                <div class="video-hub-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/12-dxY2bjsk" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>دليل واجهة نظام التشغيل macOS من آبل</h3>
+                        <p>جولة برمجية متكاملة داخل نظام ماك الأنيق، لتتعلم أفضل الأساليب والخدع التقنية لتسريع الإنتاجية والإبداع الرقمي.</p>
+                        <a href="https://youtu.be/12-dxY2bjsk?si=6d0VDl1CkMuh7hxu" target="_blank" class="watch-external-btn">
+                            <i class="fab fa-youtube"></i> مشاهدة مباشرة عبر يوتيوب
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-<!-- START FOOTER -->
-<footer class="footer">
-
-    <div class="footer-overlay"></div>
-
-    <div class="container">
-
-        <div class="footer-content">
-
-            <!-- اللوجو والوصف -->
-            <div class="footer-brand">
-                <h2>
-                    <i class="fas fa-book-reader"></i>
-                    الراسخون <span>في العلم</span>
-                </h2>
-                <p>
-                    منصة تعليمية مصرية تهدف لبناء جيل واعٍ بالعلم والتكنولوجيا والقيم الإسلامية الراقية.
-                </p>
+    <section class="video-box-section">
+        <div class="container">
+            <div class="video-frame-container">
+                <iframe src="https://www.youtube.com/embed/videoseries?list=PLroS9tRyoUGpBwtwq8NUI85KnOQdVu7v7&rel=0" allowfullscreen></iframe>
             </div>
-
-            <!-- تعريف وتحميل تطبيق I Top -->
-            <div class="footer-app">
-                <div class="app-header">
-                    <img src="images/itop.png" alt="I Top Logo" class="app-logo">
-                    <h3>تطبيق I Top</h3>
-                </div>
-                <p class="app-desc">
-                    أول تطبيق تواصل إجتماعي مصري يدعم حرية الرأي ويحافظ على القيم والأخلاق، ويدعم انتشار المحتوى النظيف بما يناسب مجتمعنا، ويهتم بالتطوير المستمر بما يتناسب مع المنافسة العالمية.
-                </p>
-                <div class="download-links">
-                    <a href="https://itopapp.page.link/android" target="_blank" class="download-btn google-play">
-                        <i class="fab fa-google-play"></i> للأندرويد
-                    </a>
-                    <a href="https://itopapp.page.link/ios" target="_blank" class="download-btn app-store">
-                        <i class="fab fa-apple"></i> للأيفون
-                    </a>
-                    <a href="https://appgallery.huawei.com/#/app/C102627445" target="_blank" class="download-btn huawei-store">
-                        <i class="fas fa-shopping-bag"></i> متجر هواوي
-                    </a>
-                </div>
-            </div>
-
-            <!-- الروابط -->
-            <div class="footer-links">
-                <h3>أقسام المنصة</h3>
-                <ul>
-                    <li><a href="index.html"><i class="fas fa-house"></i> الرئيسية</a></li>
-                    <li><a href="kids.html"><i class="fas fa-seedling"></i> قسم الأساسيات</a></li>
-                    <li><a href="tech.html"><i class="fas fa-microchip"></i> قسم التكنولوجيا</a></li>
-                    <li><a href="sociology.html"><i class="fas fa-users"></i> علم الإجتماع</a></li>
-                    <li><a href="literature-islam.html"><i class="fas fa-mosque"></i> آداب وقيم إسلامية</a></li>
-                </ul>
-            </div>
-
-            <!-- اليوتيوب -->
-            <div class="footer-youtube">
-                <h3>القناة الرسمية</h3>
-                <a href="https://youtube.com/channel/UCWuaWYwaAXgtk9m1BdjxhRA?si=fjnyBOmg4UOV6wqh" target="_blank" class="youtube-btn">
-                    <i class="fab fa-youtube"></i>
-                    <span>المتدبر محمد عصام</span>
-                </a>
-            </div>
-
         </div>
+    </section>
 
-        <!-- الحقوق -->
-        <div class="footer-bottom">
-            <p>
-                جميع الحقوق محفوظة © <span id="year"></span> منصة الراسخون في العلم
-            </p>
+    <div id="popupModal" class="info-modal" onclick="closeModalByClickOutside(event)">
+        <div class="modal-box">
+            <button class="close-modal-btn" onclick="closeDetails()">✕</button>
+            <div class="modal-head">
+                <i id="p-icon" class="fas fa-microchip"></i>
+                <h2 id="p-title">اسم القطعة التكنولوجية</h2>
+            </div>
+            <div id="p-desc" class="modal-text">الشرح الفني يظهر هنا بدقة عالية وعامّية مصرية رصينة.</div>
+            <div id="p-example" class="modal-example">المثال التوضيحي المطور لثبات الفكرة والمعلومة الهندسية.</div>
         </div>
-
     </div>
 
-</footer>
-<!-- END FOOTER -->
+    <script>
+        function switchSection(event, sectionId) {
+            const panels = document.querySelectorAll('.tab-panel');
+            panels.forEach(p => p.classList.remove('active'));
+            
+            const buttons = document.querySelectorAll('.tab-trigger');
+            buttons.forEach(b => b.classList.remove('active'));
+            
+            document.getElementById(sectionId).classList.add('active');
+            event.currentTarget.classList.add('active');
+            
+            window.scrollTo({
+                top: document.querySelector('.tabs-wrapper').offsetTop - 20,
+                behavior: 'smooth'
+            });
+        }
 
+        const infoData = {
+            motherboard: { title: "اللوحة الأم (Motherboard)", icon: "fa-microchip", desc: "تعتبر اللوحة الرئيسية الحاضنة لكل القطع والعتاد الداخلي للكمبيوتر، تعمل كجهاز اتصالات مركزي يربط القطع ببعضها ويمدها بالطاقة لتكوين منظومة عمل متكاملة.", example: "مثال توضيحي: مثل شبكة الطرق القومية الكبرى التي تربط المدن والمصانع ببعضها البعض لنقل البضائع والركاب." },
+            cpu: { title: "المعالج المركزي (CPU البروسيسور)", icon: "fa-id-card-alt", desc: "عقل النظام والمحرك الأساسي لكافة العمليات الحسابية والمنطقية. يستقبل الأوامر من البرامج والبرمجيات ويعالجها بسرعة فائقة ليخرج لك النتائج فورياً.", example: "مثال توضيحي: مثل عقل الإنسان الواعي المفكر الذي يحل المسائل الرياضية ويتحكم بحركات الجسد المختلفة." },
+            ram: { title: "ذاكرة الوصول العشوائي (RAM)", icon: "fa-memory", desc: "ذاكرة تخزين مؤقتة وسريعة جداً تسعف المعالج، تحتفظ بالملفات والبرمجيات قيد التشغيل الفوري حالياً لتسريع استدعائها، ويتم مسح محتواها كاملاً فور قطع التيار الكهربائي.", example: "مثال توضيحي: مثل ورقة مسودة تكتب فيها ملاحظات سريعة أثناء المكالمة للتذكر الفوري ثم تمزقها بعد ذلك." },
+            gpu: { title: "معالج الرسوميات (GPU كارت الشاشة)", icon: "fa-vr-cardboard", desc: "المعالج البصري الجبار المسؤول عن رندرة الصور والفيديوهات والجرافيك للألعاب والتطبيقات الهندسية، وتحويل البيانات الرقمية لمشاهد مرئية رائعة للعين.", example: "مثال توضيحي: مثل الرسام والمهندس المعماري البارع الذي يحول المخططات المكتوبة للوحات ملونة مجسمة." },
+            power: { title: "مزود الطاقة (Power Supply)", icon: "fa-plug", desc: "الوحدة المسؤولة عن تحويل التيار الكهربائي المتردد العالي من مقبس الحائط إلى تيار مستمر ومنخفض الفولتية ليناسب الاحتياجات الدقيقة للقطع الإلكترونية الداخلية بالحاسوب.", example: "مثال توضيحي: مثل محول السدود المائية الذي ينظم ضغط المياه القوي ليدخل للمنازل بانسابية وأمان بدون تدمير المواسير." },
+            case: { title: "صندوق الكمبيوتر (Case)", icon: "fa-box", desc: "الهيكل الخارجي الحامي المصنوع من المعدن المقوى والبلاستيك، لحماية المكونات الحساسة الداخلية من التعرض للصدمات، الأتربة، أو الرطوبة الخارجية.", example: "مثال توضيحي: مثل الدرع الواقي للجنود يحمي الأعضاء الحيوية من ضربات ومخاطر المعركة الخرجية." },
+            hdd: { title: "القرص الصلب الميكانيكي (HDD)", icon: "fa-hdd", desc: "وحدة التخزين المغناطيسية التقليدية، تمتاز بسعات تخزينية ضخمة وأسعار اقتصادية، وتعمل ميكانيكياً عبر أقراص ممغنطة دائرية لحفظ البيانات والملفات بشكل دائم.", example: "مثال توضيحي: مثل الأرشيف الورقي الضخم للشركات، يضم ملايين الملفات القديمة التي تحتاج لبعض الوقت للبحث بداخلها واستخراجها." },
+            ssd: { title: "القرص الصلب السريع (SSD)", icon: "fa-bolt", desc: "الجيل الأحدث من وحدات التخزين، يعتمد على رقاقات ذاكرة وميضية (Flash Memory) سريعة بشكل خارق ولا يحتوي على أي أجزاء ميكانيكية متحررة، مما يجعل نظام التشغيل والألعاب تقلع وتعمل بأجزاء من الثانية.", example: "مثال توضيحي: مثل العبقري الحافظ الذي تسأله عن معلومة فيجيبك في لمح البصر دون الحاجة لفتح الدفاتر والبحث الفعلي." },
+            usb: { title: "الذاكرة المحمولة (USB Flash Memory)", icon: "fa-usb", desc: "جهاز تخزين فلاش صغر الحجم، مخصص لنقل البيانات ومبادلتها بين الأجهزة المختلفة عبر منافذ الـ USB العالمية بخفة وسهولة شديدة.", example: "مثال توضيحي: مثل حقيبة يد صغيرة وخفيفة تضع بها أوراقك الهامة لتنتقل بها بين الشركات والمكاتب." },
+            keyboard: { title: "لوحة المفاتيح (Keyboard)", icon: "fa-keyboard", desc: "جهاز الإدخال النصي الأساسي للحاسوب، يحتوي على مصفوفة من الأزرار الممثلة للحروف والأرقام لتمكين المستخدم من صياغة المستندات وتوجيه الأوامر المباشرة.", example: "مثال توضيحي: مثل الآلة الكاتبة القديمة أو القلم الحر المستخدم في صياغة الخطابات والتقارير الرسمية." },
+            mouse: { title: "الفأرة (Mouse)", icon: "fa-mouse-pointer", desc: "أداة تأشير وإدخال مرنة، تترجم حركة يدك الفعلية إلى حركة لمؤشر السهم على شاشة العرض الرقمية لتسهيل النقر واختيار البرامج وسحب الملفات.", example: "مثال توضيحي: مثل عصا القائد يشير بها إلى الخريطة لتوجيه انتباه الجنود للمنطقة المحددة بدقة." },
+            mic: { title: "الميكروفون (Microphone)", icon: "fa-microphone", desc: "مستقبل ومدخل صوتي ذكي، يقوم بتحويل الموجات الصوتية والكلام البشري إلى إشارات رقمية يفهمها الكمبيوتر لتسجيل الشروحات أو إجراء المكالمات الصوتية.", example: "مثال توضيحي: مثل الآلة الصوتية التي تكبر صوت الخطيب ليوصل نبرات صوته بدقة لآلاف الحاضرين." },
+            cam: { title: "كاميرا الويب (Webcam)", icon: "fa-camera", desc: "عدسة بصرية رقمية تلتقط البث المرئي المباشر وتدخله للكمبيوتر، لتسمح للأفراد والمدرسين بمشاهدتك لايف بجودة عالية عبر برمجيات التواصل.", example: "مثال توضيحي: مثل النافذة الزجاجية المطلة على الشارع تكشف لكل من بالخارج تفاصيل المشهد الداخلي بوضوح." },
+            monitor: { title: "الشاشة (Monitor)", icon: "fa-desktop", desc: "جهاز الإخراج البصري الأساسي للمستخدم، تترجم العمليات المعقدة والبيانات المشفرة إلى واجهات ملونة وصور متحركة تدركها العين البشرية وتتفاعل معها.", example: "مثال توضيحي: مثل شاشة السينما الكبرى تعرض القصة والحكاية المكتوبة بداخل السيناريو على هيئة مشاهد مصورة رائعة." },
+            speakers: { title: "السماعات (Speakers)", icon: "fa-volume-up", desc: "وحدة الإخراج الصوتية المخصصة لتحويل الإشارات الكهربائية المشفرة بالداخل إلى موجات وترددات صوتية ملموسة تسمعها الآذان بنقاء وجودة عالية.", example: "مثال توضيحي: مثل المناداة في مكبرات الصوت تطلق النداءات في أرجاء المكان ليتلقاها الجميع بالسمع." },
+            printer: { title: "الطابعة (Printer)", icon: "fa-print", desc: "آلة متطورة تخرج البيانات الرقمية والمستندات والرسومات الظاهرة إلكترونياً على الشاشة وتطبعها بحبر حقيقي على أوراق ملموسة لاستخدامها الفعلي.", example: "مثال توضيحي: مثل المطابع الكبرى تحول ملفات الرواية المكتوبة بصيغة وورد إلى كتب ورقية حقيقية تُباع بالمكتبات." },
+            router: { title: "جهاز الراوتر (Router الواي فاي)", icon: "fa-wifi", desc: "الموجه والمنظم للشبكات، يربط شبكتك المحلية بشبكة الويب العالمية، ويدير تدفق البيانات اللاسلكية بدقة متناهية لكافة الأجهزة المتصلة بالمنزل.", example: "مثال توضيحي: مثل شرطي المرور الواقف بمنتصف الميدان يوجه كل سيارة لاتجاهها الصحيح لمنع حدوث التكدس والتصادم." },
+            windows: { title: "نظام تشغيل ويندوز (Windows)", icon: "fa-windows", desc: "النظام البرمجي الأكثر مبيعاً وشهرة للحواسب المكتبية من شركة مايكروسوفت، يوفر واجهة رسومية سهلة لإدارة العتاد وتشغيل الألعاب والبرمجيات المتنوعة للشركات.", example: "مثال توضيحي: مثل عمدة المدينة ينظم القوانين ويشرف على كافة المرافق والخدمات لضمان معيشة مستقرة وآمنة للسكان." },
+            linux: { title: "نظام تشغيل لينكس (Linux)", icon: "fa-linux", desc: "نظام تشغيل متين للغاية ومفتوح المصدر، يتيح للمطورين تعديل أكواده، ويشتهر باستقراره الأسطوري ومقاومته المطلقة للفيروسات والبرمجيات الخبيثة، ولذا تعتمد عليه أضخم الخوادم العالمية.", example: "مثال توضيحي: مثل القلعة الحصينة المبنية بحجارة صلبة وخطط معمارية مكشوفة للجميع ليشاركوا بتدعيمها وتأمين ثغراتها." },
+            macos: { title: "نظام تشغيل ماك (macOS)", icon: "fa-apple", desc: "النظام الرسمي والخاص بأجهزة حواسيب أبل، يمتاز بتوافق مذهل ومثالي مع العتاد الداخلي، ويقدم بيئة عمل فائقة الجمال والاستقرار لمصممي الجرافيك والمونتير.", example: "مثال توضيحي: مثل سيارة رياضية فخمة تم تصنيع محركها وهيكلها وإطاراتها في مصنع واحد متكامل لتعطي أعلى درجات التناغم والسرعة." },
+            browser: { title: "متصفح الإنترنت (Browser)", icon: "fa-globe", desc: "تطبيق برمجي مصمم كبوابة عبور وقراءة لملفات الـ HTML والمواقع عبر الإنترنت، وبدونه لا يمكن تصفح محركات البحث أو مواقع التواصل الاجتماعي وفيديوهات يوتيوب.", example: "مثال توضيحي: مثل المنظار المكبر أو التليسكوب يسمح لك باستكشاف العوالم والنجوم البعيدة وأنت جالس بمكانك." },
+            antivirus: { title: "مكافح الفيروسات (Antivirus)", icon: "fa-shield-halved", desc: "البرنامج الدفاعي والأمني الأهم، يقوم بفحص دائم لكافة الملفات القادمة للجهاز والروابط للتأكد من خلوها من الأكواد التدميرية والتجسسية لحفظ خصوصية وبيانات المستخدم.", example: "مثال توضيحي: مثل الأجسام المضادة وجهاز المناعة القوي بجسم الإنسان يهاجم الميكروبات فور دخولها ويقضي عليها لحماية الجسد." }
+        };
 
+        function openDetails(key) {
+            const data = infoData[key];
+            if (!data) return;
+            document.getElementById('p-title').innerText = data.title;
+            document.getElementById('p-desc').innerText = data.desc;
+            document.getElementById('p-example').innerText = data.example;
+            document.getElementById('p-icon').className = "fas " + data.icon;
+            document.getElementById('popupModal').classList.add('active');
+        }
 
+        function closeDetails() {
+            document.getElementById('popupModal').classList.remove('active');
+        }
 
-<!-- START FOOTER-->
-<style>
-    /* ==========================================
-   تنسيقات الفوتر العامة (Footer Base Styles)
-============================================ */
-.footer {
-    position: relative;
-    background-color: #11141a; /* لون داكن فخم خلف الفوتر */
-    color: #ffffff;
-    padding: 60px 0 20px 0;
-    font-family: 'Cairo', sans-serif; /* يفضل استخدام خط ك Cairo للمواقع العربية */
-    direction: rtl; /* لضمان الترتيب الصحيح من اليمين لليسار */
-    overflow: hidden;
-}
-
-.footer-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 50% 20%, rgba(212, 175, 55, 0.05), transparent 60%);
-    pointer-events: none;
-}
-
-.container {
-    width: 85%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
-.footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 40px;
-    margin-bottom: 40px;
-}
-
-/* العناوين الافتراضية داخل الفوتر */
-.footer h3 {
-    color: #ffffff;
-    font-size: 1.2rem;
-    margin-top: 0;
-    margin-bottom: 20px;
-    position: relative;
-    padding-bottom: 10px;
-}
-
-.footer h3::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 40px;
-    height: 2px;
-    background-color: #d4af37; /* خط ذهبي صغير تحت العناوين */
-}
-
-/* ==========================================
-   1. قسم اللوجو والوصف (Brand)
-============================================ */
-.footer-brand {
-    flex: 1.5;
-    min-width: 250px;
-}
-
-.footer-brand h2 {
-    color: #ffffff;
-    font-size: 1.8rem;
-    margin-top: 0;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.footer-brand h2 i {
-    color: #d4af37; /* لون الأيقونة ذهبي */
-}
-
-.footer-brand h2 span {
-    color: #d4af37;
-    font-weight: 300;
-}
-
-.footer-brand p {
-    color: #a0aec0;
-    line-height: 1.8;
-    font-size: 0.95rem;
-    margin: 0;
-}
-
-/* ==========================================
-   2. قسم تطبيق I Top (الجديد)
-============================================ */
-.footer-app {
-    flex: 1.5;
-    min-width: 280px;
-}
-
-.footer-app .app-header {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 15px;
-}
-
-/* الإطار المضيء الذهبي الخفيف حول الأيقونة */
-.footer-app .app-logo {
-    width: 55px;
-    height: 55px;
-    border-radius: 4px;
-    object-fit: cover;
-    border: 1px solid #fff ;
-    box-shadow: 0 0 12px rgba(212, 175, 55, 0.25); /* توهج ذهبي هادئ */
-    transition: all 0.3s ease;
-}
-
-.footer-app .app-logo:hover {
-    box-shadow: 0 0 18px rgba(212, 175, 55, 0.6); /* زيادة التوهج عند التمرير */
-    transform: translateY(-3px);
-}
-
-.footer-app .app-desc {
-    color: #a0aec0;
-    font-size: 0.9rem;
-    line-height: 1.7;
-    margin-top: 0;
-    margin-bottom: 20px;
-    text-align: justify;
-}
-
-/* أزرار المتاجر */
-.footer-app .download-links {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.footer-app .download-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    padding: 10px 15px;
-    background: rgba(255, 255, 255, 0.03);
-    color: #e2e8f0;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 0.85rem;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    transition: all 0.3s ease;
-}
-
-.footer-app .download-btn i {
-    font-size: 1.1rem;
-}
-
-/* ألوان الهوفر عند الوقوف على أزرار التحميل */
-.footer-app .download-btn.google-play:hover {
-    background: #34a853;
-    border-color: #34a853;
-    color: #fff;
-}
-
-.footer-app .download-btn.app-store:hover {
-    background: #000000;
-    border-color: #333;
-    color: #fff;
-}
-
-.footer-app .download-btn.huawei-store:hover {
-    background: #e6162d;
-    border-color: #e6162d;
-    color: #fff;
-}
-
-/* ==========================================
-   3. قسم الروابط والأقسام (Links)
-============================================ */
-.footer-links {
-    flex: 1;
-    min-width: 200px;
-}
-
-.footer-links ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.footer-links li {
-    margin-bottom: 12px;
-}
-
-.footer-links a {
-    color: #a0aec0;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 0.95rem;
-    transition: color 0.2s ease, transform 0.2s ease;
-}
-
-.footer-links a i {
-    font-size: 0.85rem;
-    color: rgba(212, 175, 55, 0.6);
-}
-
-.footer-links a:hover {
-    color: #d4af37;
-    transform: translateX(-5px); /* حركة خفيفة لليمين عند الهوفر */
-}
-
-/* ==========================================
-   4. قسم اليوتيوب (YouTube)
-============================================ */
-.footer-youtube {
-    flex: 1;
-    min-width: 220px;
-}
-
-.footer-youtube .youtube-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: #ff0000;
-    color: #ffffff;
-    text-decoration: none;
-    padding: 12px 20px;
-    border-radius: 30px;
-    font-weight: bold;
-    font-size: 0.9rem;
-    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.2);
-    transition: all 0.3s ease;
-}
-
-.footer-youtube .youtube-btn:hover {
-    background: #cc0000;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 0, 0, 0.4);
-}
-
-/* ==========================================
-   5. حقوق النشر (Footer Bottom)
-============================================ */
-.footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    padding-top: 20px;
-    text-align: center;
-}
-
-.footer-bottom p {
-    color: #718096;
-    font-size: 0.85rem;
-    margin: 0;
-}
-
-/* ==========================================
-   التوافق مع الشاشات الصغيرة (Responsive)
-============================================ */
-@media (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;
-        gap: 30px;
-    }
-    
-    .footer-brand, .footer-app, .footer-links, .footer-youtube {
-        flex: 1 1 100%;
-    }
-    
-    .footer-links a:hover {
-        transform: none; /* إلغاء التزحزح على الموبايل لراحة العين */
-    }
-}
-
-</style>
-<!-- END FOOTER  -->
-
-
-
-
-
-
-<!-- الزر العائم لمعلومات الكمبيوتر -->
-<a href="com/computer.html" class="floating-btn">
-    <i class="fas fa-laptop"></i> 
-    <span>معلومات الكمبيوتر</span>
-</a>
-
-<style>
-.floating-btn {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: linear-gradient(135deg, #2ecc71, #3498db); /* تداخل الأخضر والأزرق */
-    color: white;
-    padding: 15px 25px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-family: 'Cairo', sans-serif;
-    font-weight: bold;
-    font-size: 16px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transition: all 0.3s ease;
-    border: 2px solid white;
-}
-
-.floating-btn:hover {
-    transform: scale(1.1);
-    background: linear-gradient(135deg, #3498db, #2ecc71);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-}
-
-@media (max-width: 768px) {
-    .floating-btn {
-        bottom: 20px;
-        right: 20px;
-        padding: 12px 18px;
-        font-size: 14px;
-    }
-}
-</style>
-
-
-
-
-
-
-
-
+        function closeModalByClickOutside(event) {
+            if (event.target.id === 'popupModal') {
+                closeDetails();
+            }
+        }
+    </script>
     <script src="js/main.js"></script>
 </body>
 </html>
