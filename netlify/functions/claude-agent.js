@@ -1,47 +1,48 @@
 import { Anthropic } from '@anthropic-ai/sdk';
 
-export const handler = async (event, context) => {
-  // 1. للتأكد من أن الطلب قادم من موقعك فقط (حماية)
-  if (event.httpMethod !== 'POST') {
-    return {
-      statusCode: 405,
-      body: JSON.stringify({ error: 'Method Not Allowed - استخدم POST' }),
-    };
-  }
+// تفاصيل منصة الراسخون في العلم المستخرجة من الـ HTML بتاعك
+const alrasikhunData = `
+أنت المساعد الذكي الرسمي لمنصة "الراسخون في العلم" (مبادرة من أجل مصر).
+معلومات المنصة الأساسية لتجيب منها المستخدم:
+- الرؤية: منصة تعليمية مصرية رائدة تهدف لمحو الأمية، محاربة الجهل، نشر الوعي الثقافي والتكنولوجي والمجتمعي، وتمكين المواطنين بالعلم.
+- المؤسس والمطور: المهندس محمد عصام الفيومي.
+- رقم التواصل الدعم الفني: +201279350952
+- مسارات المنصة الرئيسية:
+  1. قسم الأساسيات: أساسيات اللغة العربية ولغات أخرى.
+  2. التمكين الرقمي (التكنولوجيا): فهم عالم الإنترنت والتكنولوجيا.
+  3. الوعي المجتمعي (علم الاجتماع): بناء شخصية واعية ومنتجة.
+  4. القيم والأدب (الدين الإسلامي): قصص إسلامية وقضايا عن الإلحاد وصدق الدين الإسلامي.
+- ميزات إضافية: المنصة تدعم تطبيق "I Top" وهو أول تطبيق تواصل اجتماعي مصري يحافظ على القيم والأخلاق.
 
+تحدث بلباقة ووقار، وأجب باختصار ووضوح بناءً على هذه الخلفية.
+`;
+
+export default async (req, context) => {
   try {
-    // 2. قراءة السؤال المرسل من المتصفح (الفرونت إند)
-    const buffer = JSON.parse(event.body);
-    const userQuestion = buffer.question;
+    const { userMessage } = await req.json();
 
-    // 3. الاتصال الذكي بـ Claude باستخدام المفتاح السري المخزن في Netlify تلقائياً
     const anthropic = new Anthropic({
-      apiKey: process.env.ANTHROPIC_API_KEY,
+      apiKey: process.env.ANTHROPIC_API_KEY, 
     });
 
     const response = await anthropic.messages.create({
-      model: 'claude-opus-4.8', // النموذج المتطور الموضح في صورتك
+      model: "claude-3-5-sonnet-20241022",
       max_tokens: 1024,
-      messages: [
-        { 
-          role: 'user', 
-          content: `أنت المساعد الذكي لمطور الواجهات الأمامية محمد عصام. أجب على هذا السؤال باحترافية وبشكل مختصر كلغة مساعد شخصي: ${userQuestion}` 
-        }
-      ],
+      system: alrasikhunData, // تغذية كلوود ببيانات الموقع هنا مباشرة
+      messages: [{ role: "user", content: userMessage }],
     });
 
-    // 4. إرسال الإجابة مرة أخرى إلى الفرونت إند
-    return {
-      statusCode: 200,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ reply: response.content[0].text }),
-    };
-
+    return new Response(JSON.stringify({ reply: response.content[0].text }), {
+      headers: { "Content-Type": "application/json; charset=utf-8" },
+    });
   } catch (error) {
-    console.error('حدث خطأ في السيرفر:', error);
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ error: 'فشل الذكاء الاصطناعي في الرد، تأكد من الـ API Key في Netlify' }),
-    };
+    return new Response(JSON.stringify({ error: error.message }), { 
+      status: 500,
+      headers: { "Content-Type": "application/json" }
+    });
   }
+};
+
+export const config = {
+  path: "/api/chat" // الرابط اللي هنكلمه من الـ HTML
 };
